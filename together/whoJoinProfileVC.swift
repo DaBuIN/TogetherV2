@@ -86,6 +86,9 @@ class whoJoinProfileVC: UIViewController , UIImagePickerControllerDelegate, UINa
         
         let alertController = UIAlertController(title: "\(title)", message: "", preferredStyle: .alert)
         let denyAction = UIAlertAction(title: "OK", style: .default, handler: {(action) in
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabbarvc")
+            self.present(vc!, animated: true, completion: nil)
+            
         })
         alertController.addAction(denyAction)
         self.present(alertController, animated: true, completion: nil )

@@ -174,10 +174,10 @@ class whoJoinMyOpenGroupVC: UIViewController,UITableViewDataSource,UITableViewDe
                         var applytime = a["applytime"]!
                         var judgetime = a["judgetime"]!
                          var updatetime = a["updatetime"]!
-                        
+                        var nickname = a["nickname"]!
                         //                        var displayLebel = "maid:\(maid)主題是\(subject),創辦者是\(openGroupmId),申請者是\(applyUsermId)"
-                        var displayLebel = "maid:\(maid)申請者是\(applyusermid)"
-                        
+//                        var displayLebel = "maid:\(maid)申請者是\(nickname)"
+                        var displayLebel = "申請者是:\(nickname)"
                         //                        print("manageid:\(maid)")
                         //                        print("mastatus:\(mastatus)")
                         //                        print("揪團主題是\(subject)")

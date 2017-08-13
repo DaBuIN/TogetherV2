@@ -153,18 +153,18 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
                             
                             
 //                            var displayLebel = "maid:\(maid)主題是\(subject),創辦者是\(openGroupmId),申請者是\(applyUsermId)"
-                            var displayLebel = "maid:\(maid)"
+                            var displayLebel = "\(maid)"
 
-                                                    print("manageid:\(maid)")
-                                print(displayLebel)
-                            print("mastatus:\(mastatus)")
-                                                    print("審核狀態是\(admitordeny)")
-
-//                                                    print("揪團主題是\(subject)")
-                                                    print("揪團ＩＤ是\(applyGrouptId)")
-//                                                    print("創辦者是\(openGroupmId)")
-                                                    print("申請者是\(applyUsermId)")
-                            print("-----------")
+//                                                    print("manageid:\(maid)")
+//                                print(displayLebel)
+//                            print("mastatus:\(mastatus)")
+//                                                    print("審核狀態是\(admitordeny)")
+//
+////                                                    print("揪團主題是\(subject)")
+//                                                    print("揪團ＩＤ是\(applyGrouptId)")
+////                                                    print("創辦者是\(openGroupmId)")
+//                                                    print("申請者是\(applyUsermId)")
+//                            print("-----------")
                             
                            
                             ///如果申請者mid 與 使用者mid 一致的話。才append進array
