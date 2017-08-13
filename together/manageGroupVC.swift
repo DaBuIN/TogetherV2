@@ -20,11 +20,27 @@ class manageGroupVC: UIViewController{
     @IBOutlet weak var containerMyAllOpenGroup: UIView!
     //會員id
     var mid:String?
-    
+    let app = UIApplication.shared.delegate as! AppDelegate
+
     
     
     @IBAction func logout(_ sender: Any) {
-        dismiss(animated: true , completion: nil)
+        
+        app.account = nil
+        app.mid = nil
+        app.tid = nil
+        app.id = nil
+        app.myAllGroupSelectedTid = nil
+        app.whojoinGroupSelectApplyUserMid = nil
+        app.whojoinGroupSelectMaid = nil
+        
+        
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MainView")
+        present(vc!, animated: true, completion: nil)
+    
+    
+    
     }
     
     

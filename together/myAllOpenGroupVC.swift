@@ -20,7 +20,7 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
     var mydataStartTime:Array<String> = []
     var mydataEndTime:Array<String> = []
    var  mydataOpenGroupMid:Array<String> = []
-    
+    var mydataDetail:Array<String> = []
     
         let app = UIApplication.shared.delegate as! AppDelegate
 
@@ -91,13 +91,14 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
             
             
             ////time label
-            cell.starttime.text = mydataStartTime[indexPath.row]
-            cell.endtime.text = mydataEndTime[indexPath.row]
+//            cell.starttime.text = mydataStartTime[indexPath.row]
+//            cell.endtime.text = mydataEndTime[indexPath.row]
             
             
             /////group label
             cell.labelCell.text = mydataGroup[indexPath.row]
-            ///////////***************************************************
+            cell.labeDetail.text = mydataDetail[indexPath.row]
+
             
             //                    if mydataStatus[indexPath.row] == "" {
             //            cell.labelStatus.text = "沒資料"
@@ -219,13 +220,15 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
             }
             
             ////time label
-            cell.starttime.text = mydataStartTime[indexPath.row]
-            cell.endtime.text = mydataEndTime[indexPath.row]
+//            cell.starttime.text = mydataStartTime[indexPath.row]
+//            cell.endtime.text = mydataEndTime[indexPath.row]
             
             
             /////group label
-            cell.labelCell.text = mydataGroup[indexPath.row]        }
-        
+            cell.labelCell.text = mydataGroup[indexPath.row]
+            cell.labeDetail.text = mydataDetail[indexPath.row]
+    }
+    
 
     
         func reload(){
@@ -273,7 +276,7 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
                         for a in  jsonobj as! [[String:String]] {
                             
                             
-                            
+                            var detail = a["detail"]!
                             var tid = a["tid"]!
                             var opengroupmid = a["opengroupmid"]!
                             var groupstatus = a["groupstatus"]!
@@ -281,9 +284,7 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
                             var subject = a["subject"]!
                             var starttime = a["starttime"]!
                             var endtime = a["endtime"]!
-                            //                        var displayLebel = "id:\(maid)的揪團主題是\(subject),創辦者是\(openGroupmId),申請者是\(applyUsermId)"
-                            
-                            //                        var displayLebel = "maid:\(maid)主題是\(subject),創辦者是\(openGroupmId),申請者是\(applyUsermId)"
+                           
                             var displayLebel = "tid:\(tid)開團者是\(opengroupmid)"
                             
                             //                        print("manageid:\(maid)")
@@ -310,11 +311,11 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
                             //                            if nowDateString < endtime {
                             
                             self.mydataStatus.append("\(groupstatus)")
-                            self.mydataGroup.append("\(displayLebel)")
+                            self.mydataGroup.append("\(subject)")
                             self.mydatatid.append("\(tid)")
                             self.mydataPic.append("\(subjectpic)")
                             self.mydataOpenGroupMid.append("\(opengroupmid)")
-                            
+                            self.mydataDetail.append("\(detail)")
                             
                             self.mydataStartTime.append("\(starttime)")
                             self.mydataEndTime.append("\(endtime)")

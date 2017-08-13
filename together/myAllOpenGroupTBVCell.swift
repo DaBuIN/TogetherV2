@@ -10,6 +10,7 @@ import UIKit
 
 class myAllOpenGroupTBVCell: UITableViewCell {
    
+    @IBOutlet weak var labeDetail: UILabel!
     
     @IBOutlet weak var starttime: UILabel!
     

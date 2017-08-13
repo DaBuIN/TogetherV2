@@ -89,8 +89,6 @@ class openGroupVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         
         let alertController = UIAlertController(title: "您開團嗎?", message: "送出後即開團成功", preferredStyle: .alert)
         let okaction = UIAlertAction(title: "送出", style: .default, handler: {(action) in
-//          self.sentGroupData()
-//            self.presentToManagevc()
 
             
             print(self.starttime!)
@@ -98,21 +96,20 @@ class openGroupVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             
             if self.starttime! > self.endtime! {
                 print("大於")
-                self.sentGroupData()
-                //            self.presentToManagevc()
-
+//
                 
                 self.alert(title: "開團失敗", message: "結束日期不能小於開團日期", actionTitle: "返回")
                 
             }else if self.starttime! < self.endtime!{
                 print("小魚")
                 self.sentGroupData()
-                //            self.presentToManagevc()
+                self.presentToManagevc()
                 
             }else if self.starttime! == self.endtime!{
                 print("等於")
                 self.sentGroupData()
-                
+                self.presentToManagevc()
+
             }
 
             
@@ -149,8 +146,8 @@ class openGroupVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     //////present to managevc。 API
     func presentToManagevc() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabbarvc")
-//        self.present(vc!, animated: true, completion: nil)
-        self.tabBarController?.selectedIndex = 2
+        self.present(vc!, animated: true, completion: nil)
+//        self.tabBarController?.selectedIndex = 2
 //        tabBarController?.delegate = self as! UITabBarControllerDelegate
         
     
@@ -169,12 +166,12 @@ class openGroupVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             detail = textViewDetail.text
         }
         
-        print(subject!)
-        print(location!)
-        print(starttime!)
-        print(endtime!)
-        print(classType!)
-        print(detail!)
+//        print(subject!)
+//        print(location!)
+//        print(starttime!)
+//        print(endtime!)
+//        print(classType!)
+//        print(detail!)
         //        print(subjectpicString!)
         
         let url = URL(string: "https://together-seventsai.c9users.io/openGroup.php")
