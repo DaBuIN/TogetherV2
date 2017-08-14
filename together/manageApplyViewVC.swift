@@ -13,22 +13,23 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
     @IBOutlet weak var tbView: UITableView!
     
     //mastatus = 0 時的陣列。 申請中
+     var mydataTid:Array<String> = []
+     var mydataDetail:Array<String> = []
     var mydataGroup:Array<String> = []
     var mydataMaid:Array<String> = []
     var mydataStatus:Array<String> = []
     var mydataAdmitOrDeny:Array<String> = []
+    var mydataOpenGroupMid:Array<String> = []
     //    //mastatus = 1 時的陣列  審核結束
     //    var mydataStatusFinish:Array<String> = []
     //    var mydataGroupFinish:Array<String> = []
     //    var mydataMaidFinish:Array<String> = []
-    
-    
-    
-    //暫時假裝登入者
-//    let mid = "0"
-    
+    let app = UIApplication.shared.delegate as! AppDelegate
+
+
     var mid:String?
-    
+//    var applyToDetailTid:String?
+    var applyToDetailMastatus:String?
     
     //ＴＢV數量
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,12 +46,7 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         let cell = tbView.dequeueReusableCell(withIdentifier: "manageapplycell", for: indexPath) as! applyGroupTBVCell
         
      
-        
-        //        if mydataStatus[indexPath.row] == "0"  {
-        //
-        //        cell.labelStatus.text = "申請中"
-        //
-        //        }
+     
         ////Status 0為申請中 1為審核結束
         switch mydataStatus[indexPath.row] {
         case "0":
@@ -71,8 +67,15 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         
         
         cell.labelCell.text = mydataGroup[indexPath.row]
+        cell.labelNumber.text = mydataTid[indexPath.row]
+        cell.labelDetail.text = mydataDetail[indexPath.row]
+
         
-        
+        /////cell 樣式  有向右指標
+        cell.accessoryType = .disclosureIndicator
+        //            tbView.separatorColor = nil
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+
         
         return cell
         
@@ -86,12 +89,36 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         
         let cell = tbView.dequeueReusableCell(withIdentifier: "manageapplycell", for: indexPath) as! applyGroupTBVCell
         
+        switch mydataStatus[indexPath.row] {
+        case "0":
+            cell.labelStatus.text = "申請中"
+            
+        case "1":
+            //////admitOrDeny 0為拒絕申請 1入團成功
+            if mydataAdmitOrDeny[indexPath.row] == "0" {
+                cell.labelStatus.text = "拒絕申請"
+            }else if mydataAdmitOrDeny[indexPath.row] == "1" {
+                cell.labelStatus.text = "入團成功"
+                
+            }
+        default:
+            break
+        }
+        app.tid = mydataTid[indexPath.row]
+        app.openGroupMid = mydataOpenGroupMid[indexPath.row]
+        app.applyToDetailMastatus = mydataStatus[indexPath.row]
+        /////點擊到detail頁面
+    
+        let vc = storyboard?.instantiateViewController(withIdentifier: "Gpdetail")
+        show(vc!, sender: self)
+        
         
         cell.labelCell.text = mydataGroup[indexPath.row]
-        
-        
-        
-        
+        cell.labelNumber.text = mydataTid[indexPath.row]
+        cell.labelDetail.text = mydataDetail[indexPath.row]
+        ///Style
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+
     }
     
     
@@ -147,13 +174,14 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
                             var openGroupmId = a["opengroupmid"]!
                             //主題名稱
                             var subject = a["subject"]!
-                            
-                            
+                            //主題詳細資料
+                            var detail = a["detail"]!
+
                             
                             
                             
 //                            var displayLebel = "maid:\(maid)主題是\(subject),創辦者是\(openGroupmId),申請者是\(applyUsermId)"
-                            var displayLebel = "\(maid)"
+                            var displayLebel = "\(subject)"
 
 //                                                    print("manageid:\(maid)")
 //                                print(displayLebel)
@@ -170,6 +198,10 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
                             ///如果申請者mid 與 使用者mid 一致的話。才append進array
                             ///目前顯示所有案件狀態
                             if  applyUsermId == self.mid {
+                                self.mydataTid.append("\(applyGrouptId)")
+                                self.mydataOpenGroupMid.append("\(openGroupmId)")
+                                self.mydataDetail.append("\(detail)")
+
                                 self.mydataStatus.append("\(mastatus)")
                                 self.mydataGroup.append("\(displayLebel)")
                                 self.mydataMaid.append("\(maid)")
@@ -267,8 +299,8 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         super.viewDidAppear(animated)
         
         tbView.refreshControl?.attributedTitle = NSAttributedString(string: "更新中")
-        loadDB()
-        tbView.reloadData()
+//        loadDB()
+//        tbView.reloadData()
     }
     
     

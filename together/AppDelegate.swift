@@ -38,6 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var openGroupMid:String?
     
     
+    ////////我申請的揪團用。 傳到detail頁面先知道
+    var applyToDetailMastatus:String?
+
+    
+    
     
 //    var mastername:String?
 //    var sentToDetailId:String?

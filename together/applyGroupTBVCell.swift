@@ -12,6 +12,12 @@ class applyGroupTBVCell: UITableViewCell {
     @IBOutlet weak var labelCell: UILabel!
     @IBOutlet weak var labelStatus: UILabel!
     
+    
+    @IBOutlet weak var labelNumber: UILabel!
+    
+    @IBOutlet weak var labelDetail: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

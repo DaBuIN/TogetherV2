@@ -16,6 +16,7 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var mid:String?
     var tid:String?
     var openGroupmid:String?
+    var mastatus:String?
     let app = UIApplication.shared.delegate as! AppDelegate
     
     @IBOutlet weak var subjectpicView: UIImageView!
@@ -66,8 +67,21 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
         })
         
         task.resume()
-        
+        self.alertApply(title: "申請揪團已送出", message: "請靜候佳音")
     }
+    /////申請 ALERT用
+    func alertApply(title:String,message:String){
+        
+        let alertController = UIAlertController(title: "\(title)", message: "\(message)", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: .default, handler: {(action) in
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "tabbarvc")
+            self.present(vc!, animated: true, completion: nil)
+            
+        })
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil )
+    }
+    
     
     @IBAction func ReviewBtn(_ sender: Any) {
         
@@ -403,22 +417,27 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
         super.viewDidLoad()
         
         mid = app.mid
-        
+        mastatus = app.applyToDetailMastatus
         if mid == nil {
             mid = "0"
         }
         
         print("detail頁面目前使用者是\(mid)")
+        
+        
+        /////////////////////申請按鈕用
         ////判斷使用者是不是創團者。
         
         openGroupmid = app.openGroupMid
         print("detail頁面目前創團者是\(openGroupmid)")
 //        btnApplyOulet.isEnabled = false
         
-        //如果是同一個人 不顯示申請加入按鈕
-        if mid == openGroupmid {
+        //如果是同一個人   不顯示申請加入按鈕
+        if mid == openGroupmid  {
             self.navigationItem.rightBarButtonItem = nil
         }
+        
+        ////////////********************
         loadmygroup()
         
         let groupViewLayer = subjectpicView.layer
