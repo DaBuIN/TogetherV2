@@ -9,6 +9,7 @@
 import UIKit
 
 class whojoinmyopengroupTBVCell: UITableViewCell {
+    @IBOutlet weak var imgUserPhoto: UIImageView!
 
     @IBOutlet weak var labelCell: UILabel!
     @IBOutlet weak var labelStatus: UILabel!

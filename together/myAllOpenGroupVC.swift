@@ -16,7 +16,7 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
         var mydataGroup:Array<String> = []
         var mydatatid:Array<String> = []
         var mydataStatus:Array<String> = []
-        var mydataPic:Array<String> = []
+        var mydataSubjectPic:Array<String> = []
     var mydataStartTime:Array<String> = []
     var mydataEndTime:Array<String> = []
    var  mydataOpenGroupMid:Array<String> = []
@@ -60,7 +60,6 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
             var startDateAsString = mydataStartTime[indexPath.row]
             var endDateAsString = mydataEndTime[indexPath.row]
             
-            //            var date1 = formatter.date(from: dateAsString)
             
             
             print("我是資料庫讀出來的starttime:\(startDateAsString)")
@@ -96,9 +95,13 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
             
             
             /////group label
+            //主題
             cell.labelCell.text = mydataGroup[indexPath.row]
+            //詳細資料
             cell.labeDetail.text = mydataDetail[indexPath.row]
-
+            //照片
+            cell.imgSubjectPic.downloadedFrom(link:  "\(mydataSubjectPic[indexPath.row])")
+            
             
             //                    if mydataStatus[indexPath.row] == "" {
             //            cell.labelStatus.text = "沒資料"
@@ -249,7 +252,8 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
             mydataGroup = []
             mydatatid = []
             mydataStatus = []
-             mydataPic = []
+
+            mydataSubjectPic = []
              mydataStartTime = []
              mydataEndTime = []
             //c9資料庫 post
@@ -313,7 +317,7 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
                             self.mydataStatus.append("\(groupstatus)")
                             self.mydataGroup.append("\(subject)")
                             self.mydatatid.append("\(tid)")
-                            self.mydataPic.append("\(subjectpic)")
+                            self.mydataSubjectPic.append("\(subjectpic)")
                             self.mydataOpenGroupMid.append("\(opengroupmid)")
                             self.mydataDetail.append("\(detail)")
                             

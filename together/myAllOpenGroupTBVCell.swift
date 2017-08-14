@@ -9,6 +9,7 @@
 import UIKit
 
 class myAllOpenGroupTBVCell: UITableViewCell {
+    @IBOutlet weak var imgSubjectPic: UIImageView!
    
     @IBOutlet weak var labeDetail: UILabel!
     
