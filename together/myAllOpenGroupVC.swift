@@ -95,6 +95,8 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
             
             
             /////group label
+            ////tid
+            cell.tid.text = mydatatid[indexPath.row]
             //主題
             cell.labelCell.text = mydataGroup[indexPath.row]
             //詳細資料
@@ -228,8 +230,13 @@ class myAllOpenGroupVC: UIViewController,UITableViewDelegate,UITableViewDataSour
             
             
             /////group label
+            ////tid
+            cell.tid.text = mydatatid[indexPath.row]
             cell.labelCell.text = mydataGroup[indexPath.row]
             cell.labeDetail.text = mydataDetail[indexPath.row]
+            //照片
+            cell.imgSubjectPic.downloadedFrom(link:  "\(mydataSubjectPic[indexPath.row])")
+            
     }
     
 
