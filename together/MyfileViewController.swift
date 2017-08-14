@@ -398,17 +398,17 @@ class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDB()
-        loadmygroup()
+        //loadmygroup()
         let layer = takepictureBtn.layer
         layer.cornerRadius = 20.0
         layer.masksToBounds = true
         
-        let groupViewLayer = Mygroupimage.layer
-        groupViewLayer.cornerRadius = 20.0
-        groupViewLayer.masksToBounds = true
+//        let groupViewLayer = Mygroupimage.layer
+//        groupViewLayer.cornerRadius = 20.0
+//        groupViewLayer.masksToBounds = true
         //手勢衝突時，判斷
-        Tap.require(toFail: SwipeRight)
-        Tap.require(toFail: SwipeLeft)
+//        Tap.require(toFail: SwipeRight)
+//        Tap.require(toFail: SwipeLeft)
         print(self.subject)
         print(app.mid)
         

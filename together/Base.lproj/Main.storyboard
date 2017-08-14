@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -304,7 +304,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4t7-cg-dqp" id="K5R-25-xyp">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAV-6d-s4F">
@@ -392,98 +392,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ztL-0P-pSI">
-                                <rect key="frame" x="0.0" y="70" width="375" height="527"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y0W-D4-1t7">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QuU-b4-gpd">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRT-9c-XaH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="88"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="90" id="0A3-nb-DoX"/>
-                                                        </constraints>
-                                                        <state key="normal" title="takepicture" image="question.jpg"/>
-                                                        <connections>
-                                                            <action selector="takepic:" destination="9sH-T1-wyt" eventType="touchUpInside" id="LKo-ZM-GNr"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暱稱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knD-Cw-pZ2">
-                                                        <rect key="frame" x="100" y="0.0" width="35" height="88"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入5-8個中文字" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZz-iB-Tw6">
-                                                        <rect key="frame" x="145" y="0.0" width="230" height="88"/>
-                                                        <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
-                                                </subviews>
-                                            </stackView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HEw-AN-bj9">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="87.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="簡介" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbS-z9-pMA">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aCu-1U-4Pu">
-                                        <rect key="frame" x="0.0" y="175.5" width="375" height="88"/>
-                                        <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q75-JT-VpC">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的揪團" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYm-9z-k9z">
-                                        <rect key="frame" x="0.0" y="263.5" width="375" height="88"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="6ph-Jl-YjT" appends="YES" id="kqd-fk-UqG"/>
-                                            <outletCollection property="gestureRecognizers" destination="Eww-J3-idu" appends="YES" id="e56-7y-eIy"/>
-                                        </connections>
-                                    </label>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="question.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Nsh-Xr-DjH">
-                                        <rect key="frame" x="0.0" y="351.5" width="375" height="87.5"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="6ph-Jl-YjT" appends="YES" id="KUU-tz-DcM"/>
-                                            <outletCollection property="gestureRecognizers" destination="Eww-J3-idu" appends="YES" id="AfB-qV-VqY"/>
-                                            <outletCollection property="gestureRecognizers" destination="aYy-bV-AjM" appends="YES" id="vnl-h2-aNh"/>
-                                        </connections>
-                                    </imageView>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="s4w-XP-62j">
-                                        <rect key="frame" x="0.0" y="439" width="375" height="88"/>
-                                        <color key="pageIndicatorTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    </pageControl>
-                                </subviews>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="暱稱" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="knD-Cw-pZ2">
+                                <rect key="frame" x="40" y="372" width="80" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入5-8個中文字" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CZz-iB-Tw6">
+                                <rect key="frame" x="128" y="376" width="160" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="簡介" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbS-z9-pMA">
+                                <rect key="frame" x="40" y="429" width="80" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="自我介紹 " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="q75-JT-VpC">
+                                <rect key="frame" x="128" y="434" width="200" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js6-ge-8DQ">
+                                <rect key="frame" x="93" y="542" width="195" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="揪團管理"/>
+                                <connections>
+                                    <segue destination="Glt-2e-3jK" kind="show" id="SfA-38-Xoa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRT-9c-XaH">
+                                <rect key="frame" x="67" y="72" width="247" height="278"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="takepicture" image="question.jpg"/>
+                                <connections>
+                                    <action selector="takepic:" destination="9sH-T1-wyt" eventType="touchUpInside" id="LKo-ZM-GNr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ztL-0P-pSI" firstAttribute="centerX" secondItem="PxB-di-wLT" secondAttribute="centerX" id="0Lt-Li-dqa"/>
-                            <constraint firstItem="ztL-0P-pSI" firstAttribute="width" secondItem="PxB-di-wLT" secondAttribute="width" id="JeI-vE-7n4"/>
-                            <constraint firstItem="ztL-0P-pSI" firstAttribute="leading" secondItem="PxB-di-wLT" secondAttribute="leading" id="cYT-ml-Wcb"/>
-                            <constraint firstItem="ztL-0P-pSI" firstAttribute="top" secondItem="PxB-di-wLT" secondAttribute="top" constant="70" id="iju-yQ-sg9"/>
-                            <constraint firstAttribute="trailing" secondItem="ztL-0P-pSI" secondAttribute="trailing" id="qLe-6t-75r"/>
-                            <constraint firstItem="ztL-0P-pSI" firstAttribute="centerY" secondItem="PxB-di-wLT" secondAttribute="centerY" id="zGV-Dl-LEE"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="個人資料" id="aEL-9G-1CG">
                         <barButtonItem key="rightBarButtonItem" title="儲存" id="lwP-ve-SdU">
@@ -493,35 +447,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="Mygroupimage" destination="Nsh-Xr-DjH" id="9cr-Xb-nka"/>
-                        <outlet property="SwipeLeft" destination="Eww-J3-idu" id="Swe-cI-H9I"/>
-                        <outlet property="SwipeRight" destination="6ph-Jl-YjT" id="rOk-FL-zcL"/>
-                        <outlet property="Tap" destination="aYy-bV-AjM" id="AuH-VO-GBF"/>
-                        <outlet property="groupname" destination="sYm-9z-k9z" id="kgt-52-v21"/>
-                        <outlet property="mygroupControl" destination="s4w-XP-62j" id="z1C-2S-MLr"/>
                         <outlet property="nameText" destination="CZz-iB-Tw6" id="FBe-Ar-Y47"/>
                         <outlet property="takepictureBtn" destination="qRT-9c-XaH" id="yV8-ol-yS7"/>
                         <outlet property="testlabel" destination="q75-JT-VpC" id="E1y-r8-jer"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="27b-1g-YKo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="Eww-J3-idu">
-                    <connections>
-                        <action selector="handleSwipeGesture:" destination="9sH-T1-wyt" id="g2j-PU-gDx"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="6ph-Jl-YjT">
-                    <connections>
-                        <action selector="handleSwipeGesture:" destination="9sH-T1-wyt" id="adH-CV-Lgw"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <tapGestureRecognizer id="aYy-bV-AjM">
-                    <connections>
-                        <action selector="handleTapGesture:" destination="9sH-T1-wyt" id="z7X-JS-o5w"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3286" y="979"/>
+            <point key="canvasLocation" x="3285.5999999999999" y="978.26086956521749"/>
         </scene>
         <!--Item-->
         <scene sceneID="Upu-oV-oT9">
@@ -718,15 +651,15 @@
                                 <rect key="frame" x="16" y="510" width="343" height="67"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNS-G8-NMw">
-                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="67"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="114" height="67"/>
                                         <state key="normal" title="地圖放大"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N85-V8-xoj">
-                                        <rect key="frame" x="114.5" y="0.0" width="114" height="67"/>
+                                        <rect key="frame" x="114" y="0.0" width="115" height="67"/>
                                         <state key="normal" title="地圖縮小"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNh-tv-Ff5">
-                                        <rect key="frame" x="228.5" y="0.0" width="114.5" height="67"/>
+                                        <rect key="frame" x="229" y="0.0" width="114" height="67"/>
                                         <state key="normal" title="回原位置"/>
                                     </button>
                                 </subviews>
@@ -787,17 +720,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="516"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mXr-sE-nfX">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="73.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="74"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29c-cc-nKs">
-                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="73.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="172" height="74"/>
                                                         <state key="normal" title="相機" image="question.jpg"/>
                                                         <connections>
                                                             <action selector="btnTakePic:" destination="3zc-2m-efB" eventType="touchUpInside" id="Qwf-dc-dd2"/>
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="我是主題" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRP-yZ-gee">
-                                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="73.5"/>
+                                                        <rect key="frame" x="172" y="0.0" width="171" height="74"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -805,14 +738,14 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2e-9L-NRg">
-                                                <rect key="frame" x="0.0" y="73.5" width="343" height="74"/>
+                                                <rect key="frame" x="0.0" y="74" width="343" height="73"/>
                                                 <state key="normal" title="從地圖選取地點"/>
                                                 <connections>
                                                     <action selector="pickMapPlace:" destination="3zc-2m-efB" eventType="touchUpInside" id="DLb-pu-OUO"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="開始時間" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OqT-Om-h6i">
-                                                <rect key="frame" x="0.0" y="147.5" width="343" height="73.5"/>
+                                                <rect key="frame" x="0.0" y="147" width="343" height="74"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -824,7 +757,7 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="類別" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fY-tH-g42">
-                                                <rect key="frame" x="0.0" y="295" width="343" height="73.5"/>
+                                                <rect key="frame" x="0.0" y="295" width="343" height="74"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -833,7 +766,7 @@
                                                 </connections>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="揪團介紹" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MOo-pd-aX8">
-                                                <rect key="frame" x="0.0" y="368.5" width="343" height="74"/>
+                                                <rect key="frame" x="0.0" y="369" width="343" height="73"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -842,7 +775,7 @@
                                                 </connections>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFR-2i-NUH">
-                                                <rect key="frame" x="0.0" y="442.5" width="343" height="73.5"/>
+                                                <rect key="frame" x="0.0" y="442" width="343" height="74"/>
                                                 <state key="normal" title="一鍵填資料"/>
                                             </button>
                                         </subviews>
@@ -991,32 +924,32 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Vp-yi-Xp9" id="eMJ-K7-ByO" customClass="applyGroupTBVCell" customModule="together" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FGS-6c-K8X">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ID-rB-041">
-                                                            <rect key="frame" x="0.0" y="0.0" width="94" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="94" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IB5-rk-ukq">
-                                                            <rect key="frame" x="94" y="0.0" width="93.5" height="43.5"/>
+                                                            <rect key="frame" x="94" y="0.0" width="94" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QC-6Q-M0H">
-                                                            <rect key="frame" x="187.5" y="0.0" width="94" height="43.5"/>
+                                                            <rect key="frame" x="188" y="0.0" width="93" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G4y-MX-6d6">
-                                                            <rect key="frame" x="281.5" y="0.0" width="93.5" height="43.5"/>
+                                                            <rect key="frame" x="281" y="0.0" width="94" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1070,37 +1003,37 @@
                         <viewControllerLayoutGuide type="bottom" id="FmA-B8-c4G"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XKL-pk-8vC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="512"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lkH-1b-S6X">
-                                <rect key="frame" x="16" y="0.0" width="343" height="512"/>
+                                <rect key="frame" x="16" y="64" width="343" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myallopengroupcell" id="ABv-w1-Toc" customClass="myAllOpenGroupTBVCell" customModule="together" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ABv-w1-Toc" id="ZY8-WM-Ayf">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6mF-sj-H3x">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYh-EJ-Y2d">
-                                                            <rect key="frame" x="0.0" y="0.0" width="114.5" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="114" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCq-hM-0UY">
-                                                            <rect key="frame" x="114.5" y="0.0" width="114" height="43.5"/>
+                                                            <rect key="frame" x="114" y="0.0" width="115" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ft1-rq-6we">
-                                                            <rect key="frame" x="228.5" y="0.0" width="114.5" height="43.5"/>
+                                                            <rect key="frame" x="229" y="0.0" width="114" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1172,20 +1105,20 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mvo-Mf-Lwo" id="VY3-fH-H0j">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWA-KY-Kz4">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="spj-rh-DfY">
-                                                            <rect key="frame" x="0.0" y="0.0" width="171.5" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="172" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KDp-HG-TJc">
-                                                            <rect key="frame" x="171.5" y="0.0" width="171.5" height="43.5"/>
+                                                            <rect key="frame" x="172" y="0.0" width="171" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1323,20 +1256,20 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nqi-jH-975" id="dbL-Ez-uyk" customClass="openGroupTbViCell" customModule="together" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V02-FS-1aP">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xQ-mJ-BmS">
-                                                            <rect key="frame" x="0.0" y="0.0" width="187.5" height="43.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="188" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBT-l2-uah">
-                                                            <rect key="frame" x="187.5" y="0.0" width="187.5" height="43.5"/>
+                                                            <rect key="frame" x="188" y="0.0" width="187" height="44"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1534,7 +1467,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JpF-0K-m0v" id="5ZV-QH-naK" userLabel="contView">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="團名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ayF-66-OBz">
@@ -1682,4 +1615,7 @@
         <image name="zoom_in_32px.png" width="32" height="32"/>
         <image name="zoom_out_32px.png" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SfA-38-Xoa"/>
+    </inferredMetricsTieBreakers>
 </document>
