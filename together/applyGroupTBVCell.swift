@@ -12,6 +12,7 @@ class applyGroupTBVCell: UITableViewCell {
     @IBOutlet weak var labelCell: UILabel!
     @IBOutlet weak var labelStatus: UILabel!
     
+    @IBOutlet weak var imgSubjectPic: UIImageView!
     
     @IBOutlet weak var labelNumber: UILabel!
     

@@ -20,6 +20,7 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
     var mydataStatus:Array<String> = []
     var mydataAdmitOrDeny:Array<String> = []
     var mydataOpenGroupMid:Array<String> = []
+    var mydataSubjectPic:Array<String> = []
     //    //mastatus = 1 時的陣列  審核結束
     //    var mydataStatusFinish:Array<String> = []
     //    var mydataGroupFinish:Array<String> = []
@@ -69,7 +70,7 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         cell.labelCell.text = mydataGroup[indexPath.row]
         cell.labelNumber.text = mydataTid[indexPath.row]
         cell.labelDetail.text = mydataDetail[indexPath.row]
-
+        cell.imgSubjectPic.downloadedFrom(link: "\(mydataSubjectPic[indexPath.row])")
         
         /////cell 樣式  有向右指標
         cell.accessoryType = .disclosureIndicator
@@ -130,8 +131,12 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         mydataGroup = []
         mydataMaid = []
         mydataStatus = []
-        //先假裝給一個tid
-        let tid = "3"
+        mydataTid = []
+         mydataDetail = []
+         mydataStatus = []
+         mydataAdmitOrDeny = []
+         mydataOpenGroupMid = []
+        mydataSubjectPic = []
         
         //c9資料庫 post
         let url = URL(string: "https://together-seventsai.c9users.io/getMyApplyGroup.php")
@@ -177,7 +182,7 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
                             //主題詳細資料
                             var detail = a["detail"]!
 
-                            
+                            var subjectpic =  a["subjectpic"]!
                             
                             
 //                            var displayLebel = "maid:\(maid)主題是\(subject),創辦者是\(openGroupmId),申請者是\(applyUsermId)"
@@ -206,6 +211,7 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
                                 self.mydataGroup.append("\(displayLebel)")
                                 self.mydataMaid.append("\(maid)")
                                 self.mydataAdmitOrDeny.append("\(admitordeny)")
+                                self.mydataSubjectPic.append("\(subjectpic)")
                             }
                             
                             

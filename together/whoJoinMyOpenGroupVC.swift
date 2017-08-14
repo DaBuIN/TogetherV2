@@ -22,7 +22,7 @@ class whoJoinMyOpenGroupVC: UIViewController,UITableViewDataSource,UITableViewDe
     var mydataPic:Array<String> = []
     var mydataApplyMid:Array<String> = []
 
-
+    var mydataUserPic:Array<String> = []
     
    
     var mid:String?
@@ -48,8 +48,12 @@ class whoJoinMyOpenGroupVC: UIViewController,UITableViewDataSource,UITableViewDe
         let cell = tbView.dequeueReusableCell(withIdentifier: "whojoinmyopengroupcell", for: indexPath) as! whojoinmyopengroupTBVCell
         //
         //
+        ////主題內容
         cell.labelCell.text = mydataGroup[indexPath.row]
-        //            //        cell.labelStatus.text = "0"
+        
+        cell.imgUserPhoto.downloadedFrom(link: "\(mydataUserPic[indexPath.row])")
+       
+        ////////判斷目前狀態
         if mydataStatus[indexPath.row] == "" {
             cell.labelStatus.text = "沒資料"
             cell.labelStatus.textColor = UIColor.blue
@@ -175,9 +179,11 @@ class whoJoinMyOpenGroupVC: UIViewController,UITableViewDataSource,UITableViewDe
                         var judgetime = a["judgetime"]!
                          var updatetime = a["updatetime"]!
                         var nickname = a["nickname"]!
+                        var personalpic = a["personalpic"]!
+                        
                         //                        var displayLebel = "maid:\(maid)主題是\(subject),創辦者是\(openGroupmId),申請者是\(applyUsermId)"
 //                        var displayLebel = "maid:\(maid)申請者是\(nickname)"
-                        var displayLebel = "申請者是:\(nickname)"
+                        var displayLebel = "\(nickname)"
                         //                        print("manageid:\(maid)")
                         //                        print("mastatus:\(mastatus)")
                         //                        print("揪團主題是\(subject)")
@@ -197,6 +203,8 @@ class whoJoinMyOpenGroupVC: UIViewController,UITableViewDataSource,UITableViewDe
                         self.mydataGroup.append("\(displayLebel)")
                         self.mydatamaid.append("\(maid)")
                         self.mydataApplyMid.append("\(applyusermid)")
+                        self.mydataUserPic.append("\(personalpic)")
+
                                                 }
                         
                     }
@@ -285,4 +293,24 @@ class whoJoinMyOpenGroupVC: UIViewController,UITableViewDataSource,UITableViewDe
     }
     */
 
+}
+extension UIImageView {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { () -> Void in
+                self.image = image
+            }
+            }.resume()
+    }
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode)
+    }
 }
