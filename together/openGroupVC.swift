@@ -227,7 +227,7 @@ class openGroupVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
             
         })
         let cancelAction = UIAlertAction(title: "取消", style: .destructive, handler: {(action) in
-            self.dismiss(animated: true, completion: nil)
+            //self.dismiss(animated: true, completion: nil)
         })
         
         
