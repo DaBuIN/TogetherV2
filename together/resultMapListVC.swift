@@ -39,10 +39,7 @@ class resultMapListVC: UIViewController {
             
             contViewMap.isHidden = true
             contViewList.isHidden = false
-            
-//            let vc = storyboard?.instantiateViewController(withIdentifier: "resultlistvc") as! resultListVC
-//            
-//            vc.testGroupDict()
+
             
         case 1:
             print("Map")
@@ -70,7 +67,7 @@ class resultMapListVC: UIViewController {
         self.segmentedControl.selectedSegmentIndex = 0 // List
         
         groupDict = []
-        self.loadTogetherDB()
+        //self.loadTogetherDB()
 
     }
     
@@ -92,74 +89,74 @@ class resultMapListVC: UIViewController {
     }
     
 
-    public func loadTogetherDB() {
-        
-        print("loadTogetherDB()")
-        
-        let url = URL(string: "https://together-seventsai.c9users.io/searchTogetherDB.php")
-//        let url = URL(string: "http://127.0.0.1/searchTogetherDB.php")
-        let session = URLSession(configuration: .default)
-        
-        var req = URLRequest(url: url!)
-        
-//        req.httpMethod = "POST"
-//        req.httpBody = "mid=\(app.mid!)".data(using: .utf8)
-        
-        req.httpMethod = "GET"
-        req.httpBody = "".data(using: .utf8)
-        
-        
-        let task = session.dataTask(with: req, completionHandler: {(data, response, session_error) in
-            
-            self.groupDict = []
-            
-            DispatchQueue.main.async {
-                
-                
-                do {
-                    let jsonObj = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
-                    
-                    let allObj = jsonObj as! [[String:String]]
-                    var group:[String:String] = [:]
-                    
-                    for obj in allObj {
-                        for (key, value) in obj {
-                            group["\(key)"] = value
-                        }
-                        
-                        self.groupDict! += [group]
-                    }
-                    
-                    let queue = DispatchQueue(label: "saveDB")
-                    
-                    for obj in allObj {
-                        
-                        queue.async {
-                            for (key, value) in obj {
-                                //                        print("\(key): \(value)")
-                                group["\(key)"] = value
-                            }
-                        }
-                        
-                        queue.async {
-                            self.groupDict! += [group]
-                        }
-                        
-                        
-                    }
-                    
-                    sleep(1)
-                    
-                    
-                } catch {
-                    print(error)
-                }
-            }
-            
-        })
-        
-        task.resume()
-    }
+//    public func loadTogetherDB() {
+//        
+//        print("loadTogetherDB()")
+//        
+//        let url = URL(string: "https://together-seventsai.c9users.io/searchTogetherDB.php")
+////        let url = URL(string: "http://127.0.0.1/searchTogetherDB.php")
+//        let session = URLSession(configuration: .default)
+//        
+//        var req = URLRequest(url: url!)
+//        
+////        req.httpMethod = "POST"
+////        req.httpBody = "mid=\(app.mid!)".data(using: .utf8)
+//        
+//        req.httpMethod = "GET"
+//        req.httpBody = "".data(using: .utf8)
+//        
+//        
+//        let task = session.dataTask(with: req, completionHandler: {(data, response, session_error) in
+//            
+//            self.groupDict = []
+//            
+//            DispatchQueue.main.async {
+//                
+//                
+//                do {
+//                    let jsonObj = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+//                    
+//                    let allObj = jsonObj as! [[String:String]]
+//                    var group:[String:String] = [:]
+//                    
+//                    for obj in allObj {
+//                        for (key, value) in obj {
+//                            group["\(key)"] = value
+//                        }
+//                        
+//                        self.groupDict! += [group]
+//                    }
+//                    
+//                    let queue = DispatchQueue(label: "saveDB")
+//                    
+//                    for obj in allObj {
+//                        
+//                        queue.async {
+//                            for (key, value) in obj {
+//                                //                        print("\(key): \(value)")
+//                                group["\(key)"] = value
+//                            }
+//                        }
+//                        
+//                        queue.async {
+//                            self.groupDict! += [group]
+//                        }
+//                        
+//                        
+//                    }
+//                    
+//                    sleep(1)
+//                    
+//                    
+//                } catch {
+//                    print(error)
+//                }
+//            }
+//            
+//        })
+//        
+//        task.resume()
+//    }
     
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        let segId = segue.identifier!
