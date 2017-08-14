@@ -21,6 +21,7 @@ class resultMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegat
 
     var groupPins:[MKPointAnnotation]?
 
+    var groupDict:[[String:String]]?
 
     @IBOutlet weak var mapView: MKMapView!
 
@@ -115,7 +116,15 @@ class resultMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        groupPins = []
+        groupDict = []
+        
         self.initStat()
+
+        DispatchQueue.main.async {
+            self.loadTogetherDB()
+        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -128,8 +137,9 @@ class resultMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegat
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        
         self.createGroupPins()
+
+        
         self.refreshGroupPins()
 
     }
@@ -173,23 +183,18 @@ class resultMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegat
     
     private func createGroupPins() {
         
-        let parentVC = parent as! resultMapListVC
+//        let parentVC = parent as! resultMapListVC
         
-        if parentVC.groupDict != nil {
+        if self.groupDict != nil {
             
             self.groupPins = []
             
-            for group in parentVC.groupDict! {
+            for group in self.groupDict! {
                 
                 let tid = group["tid"]!
                 let lat = CLLocationDegrees(group["lat"]!)
                 let lng = CLLocationDegrees(group["lng"]!)
                 
-//                if lat != nil && lng != nil {
-//                    print("\(tid): \(lat!), \(lng!)")
-//                } else {
-//                    print("\(tid)")
-//                }
                 
                 let coor = CLLocationCoordinate2D(latitude: lat!, longitude: lng!)
                 print("\(tid): \(coor.latitude), \(coor.longitude)")
@@ -204,6 +209,62 @@ class resultMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegat
     
     private func refreshGroupPins() {
         mapView.addAnnotations(self.groupPins!)
+    }
+    
+    public func loadTogetherDB() {
+        
+        print("loadTogetherDB()")
+        
+        let url = URL(string: "https://together-seventsai.c9users.io/searchTogetherDB.php")
+        //        let url = URL(string: "http://127.0.0.1/searchTogetherDB.php")
+        let session = URLSession(configuration: .default)
+        
+        var req = URLRequest(url: url!)
+        
+        
+        req.httpMethod = "GET"
+        req.httpBody = "".data(using: .utf8)
+        
+        
+        let task = session.dataTask(with: req, completionHandler: {(data, response, session_error) in
+            
+            self.groupDict = []
+            
+            
+            do {
+                let jsonObj = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+                
+                let allObj = jsonObj as! [[String:String]]
+                var group:[String:String] = [:]
+                
+                
+                let queue = DispatchQueue(label: "saveDB")
+                
+                for obj in allObj {
+                    
+                    queue.async {
+                        for (key, value) in obj {
+                            //                        print("\(key): \(value)")
+                            group["\(key)"] = value
+                        }
+                    }
+                    
+                    queue.async {
+                        self.groupDict! += [group]
+                    }
+                    
+                    
+                }
+                
+                
+            } catch {
+                print(error)
+            }
+            
+        })
+        
+        task.resume()
+        sleep(1)
     }
     
 }
