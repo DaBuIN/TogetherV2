@@ -66,10 +66,13 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         }
         
         
-        
+        /////主題
         cell.labelCell.text = mydataGroup[indexPath.row]
+        ///號碼
         cell.labelNumber.text = mydataTid[indexPath.row]
+        ////詳細資料
         cell.labelDetail.text = mydataDetail[indexPath.row]
+        ////主題圖片
         cell.imgSubjectPic.downloadedFrom(link: "\(mydataSubjectPic[indexPath.row])")
         
         /////cell 樣式  有向右指標
