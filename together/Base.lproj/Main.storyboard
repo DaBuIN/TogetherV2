@@ -51,7 +51,7 @@
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnq-eY-kfG">
-                                <rect key="frame" x="16" y="548" width="146" height="30"/>
+                                <rect key="frame" x="103" y="548" width="146" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="點選直接以a帳號登入"/>
                                 <connections>
@@ -59,7 +59,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3u-fG-30m">
-                                <rect key="frame" x="190" y="598" width="146" height="30"/>
+                                <rect key="frame" x="103" y="586" width="146" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="點選直接以s帳號登入"/>
                                 <connections>
@@ -67,19 +67,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sf3-m1-16O">
-                                <rect key="frame" x="28" y="629" width="73" height="30"/>
+                                <rect key="frame" x="140" y="624" width="73" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Q帳號登入"/>
                                 <connections>
                                     <action selector="QLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3NB-pD-0Nc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ucs-aq-igQ">
-                                <rect key="frame" x="234" y="548" width="59" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="testDate"/>
-                                <connections>
-                                    <action selector="testDate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ks6-VR-azC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -795,17 +787,17 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="516"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mXr-sE-nfX">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="86"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="73.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29c-cc-nKs">
-                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="86"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="73.5"/>
                                                         <state key="normal" title="相機" image="question.jpg"/>
                                                         <connections>
                                                             <action selector="btnTakePic:" destination="3zc-2m-efB" eventType="touchUpInside" id="Qwf-dc-dd2"/>
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="我是主題" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cRP-yZ-gee">
-                                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="86"/>
+                                                        <rect key="frame" x="171.5" y="0.0" width="171.5" height="73.5"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -813,26 +805,26 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2e-9L-NRg">
-                                                <rect key="frame" x="0.0" y="86" width="343" height="86"/>
+                                                <rect key="frame" x="0.0" y="73.5" width="343" height="74"/>
                                                 <state key="normal" title="從地圖選取地點"/>
                                                 <connections>
                                                     <action selector="pickMapPlace:" destination="3zc-2m-efB" eventType="touchUpInside" id="DLb-pu-OUO"/>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="開始時間" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OqT-Om-h6i">
-                                                <rect key="frame" x="0.0" y="172" width="343" height="86"/>
+                                                <rect key="frame" x="0.0" y="147.5" width="343" height="73.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="結束時間" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Inf-ht-6iC">
-                                                <rect key="frame" x="0.0" y="258" width="343" height="86"/>
+                                                <rect key="frame" x="0.0" y="221" width="343" height="74"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="類別" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fY-tH-g42">
-                                                <rect key="frame" x="0.0" y="344" width="343" height="86"/>
+                                                <rect key="frame" x="0.0" y="295" width="343" height="73.5"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -841,7 +833,7 @@
                                                 </connections>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="揪團介紹" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MOo-pd-aX8">
-                                                <rect key="frame" x="0.0" y="430" width="343" height="86"/>
+                                                <rect key="frame" x="0.0" y="368.5" width="343" height="74"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -849,6 +841,10 @@
                                                     <outlet property="delegate" destination="3zc-2m-efB" id="elT-Kg-3K5"/>
                                                 </connections>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFR-2i-NUH">
+                                                <rect key="frame" x="0.0" y="442.5" width="343" height="73.5"/>
+                                                <state key="normal" title="一鍵填資料"/>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -1176,7 +1172,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mvo-Mf-Lwo" id="VY3-fH-H0j">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tWA-KY-Kz4">
