@@ -121,18 +121,16 @@ class resultMapVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        mapView.setNeedsDisplay()
 
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-//        print(groupPins!.description)
-//        sleep(1)
         
         self.createGroupPins()
         self.refreshGroupPins()
-        mapView.setNeedsDisplay()
 
     }
     

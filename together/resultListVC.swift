@@ -15,6 +15,8 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     var tid:String?
     var openGroupmid:String?
     
+    var groupDict:[[String:String]]?
+    
     @IBOutlet weak var tableView: UITableView!
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -22,8 +24,7 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let parentVC = parent as! resultMapListVC
-        return (parentVC.groupDict?.count)!
+        return (self.groupDict?.count)!
     }
     
     
@@ -31,22 +32,16 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell") as! resultListTbCell
         
-//        cell.groupTitle.text = "DaBuIN"
-//        cell.groupContent.text = "我的老天鵝啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊"
-//        cell.groupStatus.text = "揪團中"
-//        cell.groupClass.text = "美食"
-        
-        let parentVC = parent as! resultMapListVC
         
        
-//            cell.groupTitle.text = parentVC.groupDict?[indexPath.row]["subject"]
+//            cell.groupTitle.text = self.groupDict?[indexPath.row]["subject"]
         
         ///先顯示 tid
-        cell.groupTitle.text = parentVC.groupDict?[indexPath.row]["tid"]
-            cell.groupContent.text = parentVC.groupDict?[indexPath.row]["detail"]
-//        cell.groupContent.text = parentVC.groupDict?[indexPath.row]["opengroupmid"]
+        cell.groupTitle.text = self.groupDict?[indexPath.row]["tid"]
+            cell.groupContent.text = self.groupDict?[indexPath.row]["detail"]
+//        cell.groupContent.text = self.groupDict?[indexPath.row]["opengroupmid"]
             cell.groupStatus.text = "Hot"
-            cell.groupClass.text = parentVC.groupDict?[indexPath.row]["class"]
+            cell.groupClass.text = self.groupDict?[indexPath.row]["class"]
             
        
        
@@ -57,15 +52,14 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let vc = storyboard?.instantiateViewController(withIdentifier: "Gpdetail") as! Groupdetail
-        let parentVC = parent as! resultMapListVC
         
-        app.tid = parentVC.groupDict?[indexPath.row]["tid"]
+        app.tid = self.groupDict?[indexPath.row]["tid"]
         ///////////////////*********************加來判斷  開團者是誰
 
-        app.openGroupMid = parentVC.groupDict?[indexPath.row]["opengroupmid"]
+        app.openGroupMid = self.groupDict?[indexPath.row]["opengroupmid"]
         ///////////////////*****************************************
 
-        print("selected: \(app.tid)")
+        print("selected: \(app.tid!)")
         show(vc, sender: self)
         
     }
@@ -74,20 +68,33 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     ///////*********************************************下拉更新用
     func handleRefresh(){
-        
-        tableView.refreshControl?.endRefreshing()
-        
-        ///改為你loaddb
-//        loadDB()
-        testGroupDict()
 
+        DispatchQueue.main.async {
+            self.loadTogetherDB()
+
+        }
+
+        tableView.refreshControl?.endRefreshing()
+
+        testGroupDict()
+//        sleep(1)
         tableView.reloadData()
     }
     ///////////////////*****************************************
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.automaticallyAdjustsScrollViewInsets = false
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        groupDict = []
+        
+        DispatchQueue.main.async {
+            self.loadTogetherDB()
 
+        }
+        
         ///////////////////*********************加來判斷 目前使用者是誰
         mid = app.mid
         
@@ -95,16 +102,14 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             mid = "0"
         }
         
-        print("List頁面目前使用者是\(mid)")
-        
+        print("List頁面目前使用者是\(mid!)")
         
       
         ///////////////////*****************************************
 
         
         
-        tableView.dataSource = self
-        tableView.delegate = self
+
         
         
         
@@ -112,7 +117,7 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
         
         tableView.refreshControl = UIRefreshControl()
-        tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
+        tableView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: UIControlEvents.valueChanged)
         
         ///////////////////*****************************************
 
@@ -136,6 +141,8 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 
         testGroupDict()
         sleep(1)
+//        self.automaticallyAdjustsScrollViewInsets = true
+
         tableView.reloadData()
     }
     
@@ -148,19 +155,75 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     
     func testGroupDict() {
         
-        let parentVC = parent as! resultMapListVC
+//        let parentVC = parent as! resultMapListVC
         
-        if parentVC.groupDict != nil {
+        if self.groupDict != nil {
             
-            print(parentVC.groupDict?.description)
+            print(self.groupDict?.description)
             
-            for group in parentVC.groupDict! {
+            for group in self.groupDict! {
                 for (key, value) in group {
                     print("\(key): \(value)")
                 }
             }
         }
         
+    }
+    
+    public func loadTogetherDB() {
+        
+        print("loadTogetherDB()")
+        
+        let url = URL(string: "https://together-seventsai.c9users.io/searchTogetherDB.php")
+        //        let url = URL(string: "http://127.0.0.1/searchTogetherDB.php")
+        let session = URLSession(configuration: .default)
+        
+        var req = URLRequest(url: url!)
+        
+        
+        req.httpMethod = "GET"
+        req.httpBody = "".data(using: .utf8)
+        
+        
+        let task = session.dataTask(with: req, completionHandler: {(data, response, session_error) in
+            
+            self.groupDict = []
+            
+                
+            do {
+                let jsonObj = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+                
+                let allObj = jsonObj as! [[String:String]]
+                var group:[String:String] = [:]
+                
+                
+                let queue = DispatchQueue(label: "saveDB")
+                
+                for obj in allObj {
+                    
+                    queue.async {
+                        for (key, value) in obj {
+                            //                        print("\(key): \(value)")
+                            group["\(key)"] = value
+                        }
+                    }
+                    
+                    queue.async {
+                        self.groupDict! += [group]
+                    }
+                    
+                    
+                }
+                
+                
+            } catch {
+                print(error)
+            }
+            
+        })
+        
+        task.resume()
+        sleep(1)
     }
 
 }
