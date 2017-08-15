@@ -62,7 +62,7 @@ class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, U
             }
         })
         task.resume()
-        
+        alertSaved()
     }
     
     //圖片使用照相機拍攝後的圖片或者本機端圖片
@@ -395,12 +395,24 @@ class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
+    func alertSaved() {
+        let alertController = UIAlertController(title: "資料上傳", message: "資料已儲存", preferredStyle: .alert)
+        let okaction = UIAlertAction(title: "確認", style: .default, handler: {(action) in
+            //self.dismiss(animated: true, completion: nil)
+        })
+        
+        alertController.addAction(okaction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadDB()
         //loadmygroup()
         let layer = takepictureBtn.layer
-        layer.cornerRadius = 20.0
+        layer.cornerRadius = takepictureBtn.frame.width / 2
         layer.masksToBounds = true
         
 //        let groupViewLayer = Mygroupimage.layer

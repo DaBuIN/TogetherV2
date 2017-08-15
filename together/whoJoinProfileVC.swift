@@ -189,6 +189,10 @@ class whoJoinProfileVC: UIViewController , UIImagePickerControllerDelegate, UINa
         
         
         loadDB()
+        
+        let layer = takepictureBtn.layer
+        layer.cornerRadius = takepictureBtn.frame.width / 2
+        layer.masksToBounds = true
 
     }
 
