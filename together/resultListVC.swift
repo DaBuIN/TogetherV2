@@ -36,6 +36,9 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         
         //            cell.groupTitle.text = self.groupDict?[indexPath.row]["subject"]
         
+//        let picStr = groupDict?[indexPath.row]["subjectpic"]
+//        cell.groupImg.downloadedFrom(link: "\(picStr)")
+        
         ///先顯示 tid
         cell.groupTitle.text = self.groupDict?[indexPath.row]["tid"]
         cell.groupContent.text = self.groupDict?[indexPath.row]["detail"]
@@ -45,15 +48,17 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 //        cell.groupImg.image = UIImage(named:"question.jpg")
 
 ////        print("\(self.groupDict?[indexPath.row]["subjectpic"]!)")
-////         cell.groupImg.downloadedFrom(link: "\( self.groupDict?[indexPath.row]["subjectpic"]! )"  )
-//       
-//        if let picStr = groupDict?[indexPath.row]["subjectpic"] {
-////            cell.groupImg.downloadedFrom(link: "\(picStr)")
+//         cell.groupImg.downloadedFrom(link: "\( self.groupDict?[indexPath.row]["subjectpic"]! )"  )
+//
+        if let picStr = groupDict?[indexPath.row]["subjectpic"] {
+            cell.groupImg.downloadedFrom(link: "\(picStr)")
 //            cell.groupImg.image = UIImage(named:"question.jpg")
-//            
-//        } else {
-//            cell.groupContent.text = (groupDict?[indexPath.row]["subjectpic"])
-//        }
+            
+        } else {
+            cell.groupContent.text = (groupDict?[indexPath.row]["subjectpic"])
+        }
+        
+        
         
         
         return cell
@@ -83,14 +88,15 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
 //            self.loadTogetherDB()
 //
 //        }
-        
+        tableView.refreshControl?.endRefreshing()
+
         loadTogetherDB()
 
-        tableView.refreshControl?.endRefreshing()
+        tableView.reloadData()
 
         testGroupDict()
 //        sleep(1)
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     ///////////////////*****************************************
 
@@ -192,23 +198,6 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 var group:[String:String] = [:]
                 
                 
-//                let queue = DispatchQueue(label: "saveDB")
-//                
-//                for obj in allObj {
-//                    
-//                    queue.async {
-//                        for (key, value) in obj {
-//                            //                        print("\(key): \(value)")
-//                            group["\(key)"] = value
-//                        }
-//                    }
-//                    
-//                    queue.async {
-//                        self.groupDict! += [group]
-//                    }
-//                    
-//                    
-//                }
                 for obj in allObj {
                     for (key,value) in obj {
                         group["\(key)"] = value
@@ -227,37 +216,7 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         })
         
         task.resume()
-        sleep(1)
+//        sleep(1)
     }
     
-    func downloadImg(urlString: String) -> UIImage {
-        
-        var img:UIImage?
-        let url = URL(string:"\(urlString)")
-        
-        
-//        do{
-//            if url != nil{
-//                let data = try Data(contentsOf: url!)
-//                if (UIImage(data: data) != nil) {
-//                    print("OK")
-//                        img = UIImage(data: data)!
-//                        
-//                }else {
-//                        img = UIImage(named:"question.jpg")
-//                }
-//                
-//            }else {
-//                    img = UIImage(named:"question.jpg")
-//                
-//            }
-//            
-//        }catch{
-//            print(error)
-//        }
-        img = UIImage(named:"question.jpg")
-
-        return img!
-    }
-
 }
