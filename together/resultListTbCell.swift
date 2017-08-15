@@ -10,6 +10,8 @@ import UIKit
 
 class resultListTbCell: UITableViewCell {
 
+    
+    @IBOutlet weak var groupImg: UIImageView!
     @IBOutlet weak var groupTitle: UILabel!
     @IBOutlet weak var groupContent: UILabel!
     @IBOutlet weak var groupClass: UILabel!

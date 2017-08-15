@@ -33,18 +33,28 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell") as! resultListTbCell
         
         
-       
-//            cell.groupTitle.text = self.groupDict?[indexPath.row]["subject"]
+        
+        //            cell.groupTitle.text = self.groupDict?[indexPath.row]["subject"]
         
         ///先顯示 tid
         cell.groupTitle.text = self.groupDict?[indexPath.row]["tid"]
-            cell.groupContent.text = self.groupDict?[indexPath.row]["detail"]
-//        cell.groupContent.text = self.groupDict?[indexPath.row]["opengroupmid"]
-            cell.groupStatus.text = "Hot"
-            cell.groupClass.text = self.groupDict?[indexPath.row]["class"]
-            
-       
-       
+        cell.groupContent.text = self.groupDict?[indexPath.row]["detail"]
+        //        cell.groupContent.text = self.groupDict?[indexPath.row]["opengroupmid"]
+        cell.groupStatus.text = "Hot"
+        cell.groupClass.text = self.groupDict?[indexPath.row]["class"]
+//        cell.groupImg.image = UIImage(named:"question.jpg")
+
+////        print("\(self.groupDict?[indexPath.row]["subjectpic"]!)")
+////         cell.groupImg.downloadedFrom(link: "\( self.groupDict?[indexPath.row]["subjectpic"]! )"  )
+//       
+//        if let picStr = groupDict?[indexPath.row]["subjectpic"] {
+////            cell.groupImg.downloadedFrom(link: "\(picStr)")
+//            cell.groupImg.image = UIImage(named:"question.jpg")
+//            
+//        } else {
+//            cell.groupContent.text = (groupDict?[indexPath.row]["subjectpic"])
+//        }
+        
         
         return cell
     }
@@ -69,10 +79,12 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     ///////*********************************************下拉更新用
     func handleRefresh(){
 
-        DispatchQueue.main.async {
-            self.loadTogetherDB()
-
-        }
+//        DispatchQueue.main.async {
+//            self.loadTogetherDB()
+//
+//        }
+        
+        loadTogetherDB()
 
         tableView.refreshControl?.endRefreshing()
 
@@ -90,30 +102,11 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         tableView.delegate = self
         groupDict = []
         
-        DispatchQueue.main.async {
-            self.loadTogetherDB()
-
-        }
-        
-        ///////////////////*********************加來判斷 目前使用者是誰
-        mid = app.mid
-        
-        if mid == nil {
-            mid = "0"
-        }
-        
-        print("List頁面目前使用者是\(mid!)")
-        
-      
-        ///////////////////*****************************************
-
-        
-        
-
-        
-        
-        
-        ///////////////////*****************************************
+//        DispatchQueue.main.async {
+//            self.loadTogetherDB()
+//
+//        }
+        loadTogetherDB()
 
         
         tableView.refreshControl = UIRefreshControl()
@@ -143,7 +136,7 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         sleep(1)
 //        self.automaticallyAdjustsScrollViewInsets = true
 
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
     
@@ -189,7 +182,9 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
             
             self.groupDict = []
             
+            DispatchQueue.main.async {
                 
+            
             do {
                 let jsonObj = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
                 
@@ -197,33 +192,72 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
                 var group:[String:String] = [:]
                 
                 
-                let queue = DispatchQueue(label: "saveDB")
-                
+//                let queue = DispatchQueue(label: "saveDB")
+//                
+//                for obj in allObj {
+//                    
+//                    queue.async {
+//                        for (key, value) in obj {
+//                            //                        print("\(key): \(value)")
+//                            group["\(key)"] = value
+//                        }
+//                    }
+//                    
+//                    queue.async {
+//                        self.groupDict! += [group]
+//                    }
+//                    
+//                    
+//                }
                 for obj in allObj {
-                    
-                    queue.async {
-                        for (key, value) in obj {
-                            //                        print("\(key): \(value)")
-                            group["\(key)"] = value
-                        }
+                    for (key,value) in obj {
+                        group["\(key)"] = value
                     }
                     
-                    queue.async {
-                        self.groupDict! += [group]
-                    }
-                    
-                    
+                    self.groupDict?.append(group)
+
                 }
                 
+                self.tableView.reloadData()
                 
             } catch {
                 print(error)
-            }
+            }}
             
         })
         
         task.resume()
         sleep(1)
+    }
+    
+    func downloadImg(urlString: String) -> UIImage {
+        
+        var img:UIImage?
+        let url = URL(string:"\(urlString)")
+        
+        
+//        do{
+//            if url != nil{
+//                let data = try Data(contentsOf: url!)
+//                if (UIImage(data: data) != nil) {
+//                    print("OK")
+//                        img = UIImage(data: data)!
+//                        
+//                }else {
+//                        img = UIImage(named:"question.jpg")
+//                }
+//                
+//            }else {
+//                    img = UIImage(named:"question.jpg")
+//                
+//            }
+//            
+//        }catch{
+//            print(error)
+//        }
+        img = UIImage(named:"question.jpg")
+
+        return img!
     }
 
 }
