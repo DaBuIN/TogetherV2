@@ -643,6 +643,7 @@ class openGroupVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        
         //結束編輯 把鍵盤隱藏 view放下
         UIView.animate(withDuration: 0.4, animations: {
             self.view.frame.origin.y = 0
@@ -722,7 +723,7 @@ class openGroupVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
         }
         
         print("我是使用者：\(mid!)")
-        
+        /////主題藍 填寫時清空
         textFieldSubject.clearsOnInsertion = true
         
         

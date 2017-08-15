@@ -802,7 +802,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29c-cc-nKs">
-                                <rect key="frame" x="38" y="66.5" width="300" height="200.5"/>
+                                <rect key="frame" x="37.5" y="66.5" width="300" height="200.5"/>
                                 <state key="normal" title="相機" image="question.jpg"/>
                                 <connections>
                                     <action selector="btnTakePic:" destination="3zc-2m-efB" eventType="touchUpInside" id="Qwf-dc-dd2"/>
@@ -817,28 +817,27 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2e-9L-NRg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <state key="normal" image="map48.png"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2e-9L-NRg" userLabel="imgMap">
+                                <rect key="frame" x="131.5" y="343.5" width="112.5" height="80"/>
+                                <state key="normal" image="map96.png"/>
                                 <connections>
                                     <action selector="pickMapPlace:" destination="3zc-2m-efB" eventType="touchUpInside" id="DLb-pu-OUO"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="開始時間" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OqT-Om-h6i">
-                                <rect key="frame" x="75.5" y="367" width="225" height="66.5"/>
+                                <rect key="frame" x="56.5" y="450.5" width="225" height="33"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="結束時間" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Inf-ht-6iC">
-                                <rect key="frame" x="132" y="511" width="187.5" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="結束時間" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Inf-ht-6iC">
+                                <rect key="frame" x="94" y="500.5" width="225" height="33"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="類別" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1fY-tH-g42">
-                                <rect key="frame" x="225" y="266.5" width="112.5" height="67"/>
+                                <rect key="frame" x="261" y="289" width="41" height="22"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -846,9 +845,8 @@
                                     <outlet property="delegate" destination="3zc-2m-efB" id="eb9-DU-UsA"/>
                                 </connections>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="揪團介紹" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MOo-pd-aX8">
-                                <rect key="frame" x="75" y="552" width="262.5" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="揪團介紹" translatesAutoresizingMaskIntoConstraints="NO" id="MOo-pd-aX8">
+                                <rect key="frame" x="178.5" y="550" width="168.5" height="67"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -857,62 +855,73 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKw-yi-OcM" userLabel="imgClass">
-                                <rect key="frame" x="187.5" y="267" width="75" height="66.5"/>
+                                <rect key="frame" x="209" y="284.5" width="32" height="32"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                 <state key="normal" image="class32.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOy-EE-jxO">
-                                <rect key="frame" x="32" y="400.5" width="32" height="66.5"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOy-EE-jxO" userLabel="imgStart">
+                                <rect key="frame" x="37.5" y="450.5" width="37.5" height="33"/>
                                 <state key="normal" image="start32.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyc-j4-JQa">
-                                <rect key="frame" x="32" y="552" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WC-Bg-sr1" userLabel="imgEnd">
+                                <rect key="frame" x="75" y="500.5" width="37.5" height="33"/>
+                                <state key="normal" image="end32.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyc-j4-JQa" userLabel="imgDetail">
+                                <rect key="frame" x="122" y="550.5" width="37.5" height="33"/>
                                 <state key="normal" image="detail32.png"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSj-xp-b0N">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSj-xp-b0N" userLabel="imgTakePic">
                                 <rect key="frame" x="19" y="183.5" width="75" height="100"/>
                                 <state key="normal" image="addimg.png"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WC-Bg-sr1">
-                                <rect key="frame" x="96" y="511" width="32" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="end32.png"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OqT-Om-h6i" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" id="2TR-pM-gNO"/>
-                            <constraint firstItem="j2e-9L-NRg" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" id="93t-x6-eh2"/>
+                            <constraint firstItem="cOy-EE-jxO" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.1" id="1CL-qf-Gmp"/>
+                            <constraint firstItem="OqT-Om-h6i" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.9" id="2TR-pM-gNO"/>
+                            <constraint firstItem="0WC-Bg-sr1" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.1" id="3qD-gS-vJt"/>
+                            <constraint firstItem="j2e-9L-NRg" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.3" id="93t-x6-eh2"/>
                             <constraint firstItem="cRP-yZ-gee" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="0.9" id="95t-Vd-wqA"/>
                             <constraint firstItem="WSj-xp-b0N" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="0.7" id="9rL-eb-TFC"/>
                             <constraint firstItem="WSj-xp-b0N" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.15" id="BmB-JK-6Mn"/>
                             <constraint firstItem="j2e-9L-NRg" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" id="FAR-S9-Hfd"/>
-                            <constraint firstItem="j2e-9L-NRg" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" id="FvV-WT-nmj"/>
+                            <constraint firstItem="j2e-9L-NRg" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.12" id="FvV-WT-nmj"/>
+                            <constraint firstItem="0WC-Bg-sr1" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.05" id="GQ7-Jx-EAN"/>
                             <constraint firstItem="pKw-yi-OcM" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="1.2" id="J6m-hj-tHF"/>
-                            <constraint firstItem="OqT-Om-h6i" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.2" id="LaO-BX-Mzl"/>
-                            <constraint firstItem="pKw-yi-OcM" firstAttribute="height" secondItem="j2e-9L-NRg" secondAttribute="height" multiplier="0.1" id="MNy-UL-QbP"/>
+                            <constraint firstItem="cyc-j4-JQa" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.7" id="L2L-6m-ofp"/>
+                            <constraint firstItem="OqT-Om-h6i" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.4" id="LaO-BX-Mzl"/>
+                            <constraint firstItem="cyc-j4-JQa" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.75" id="MYq-hG-JlN"/>
                             <constraint firstItem="WSj-xp-b0N" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.2" id="OC9-JD-Vlk"/>
-                            <constraint firstItem="1fY-tH-g42" firstAttribute="width" secondItem="j2e-9L-NRg" secondAttribute="width" multiplier="0.3" id="OWK-zC-8Jx"/>
+                            <constraint firstItem="0WC-Bg-sr1" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.55" id="Qml-op-2ek"/>
+                            <constraint firstItem="0WC-Bg-sr1" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.5" id="Qzj-iA-sf8"/>
                             <constraint firstItem="29c-cc-nKs" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.3" id="Tfr-gu-FnE"/>
-                            <constraint firstItem="pKw-yi-OcM" firstAttribute="width" secondItem="j2e-9L-NRg" secondAttribute="width" multiplier="0.2" id="Txk-m2-U2f"/>
-                            <constraint firstItem="OqT-Om-h6i" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.1" id="XZf-m0-I9Y"/>
-                            <constraint firstItem="j2e-9L-NRg" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" id="YVH-lr-ZSA"/>
+                            <constraint firstItem="Inf-ht-6iC" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.05" id="Y3D-kJ-i5Z"/>
+                            <constraint firstItem="j2e-9L-NRg" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.15" id="YVH-lr-ZSA"/>
+                            <constraint firstItem="MOo-pd-aX8" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.45" id="Yuo-em-TB1"/>
                             <constraint firstItem="cRP-yZ-gee" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.1" id="ZrI-VS-Xkl"/>
                             <constraint firstItem="cRP-yZ-gee" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.6" id="aDN-MA-bLY"/>
                             <constraint firstItem="pKw-yi-OcM" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="0.9" id="bex-Tn-ew7"/>
-                            <constraint firstItem="cOy-EE-jxO" firstAttribute="height" secondItem="OqT-Om-h6i" secondAttribute="height" id="cce-vR-oqv"/>
+                            <constraint firstItem="cOy-EE-jxO" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.3" id="clt-51-fqg"/>
                             <constraint firstItem="29c-cc-nKs" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" id="e2k-Db-4qV"/>
+                            <constraint firstItem="Inf-ht-6iC" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.55" id="eTT-Ve-GK2"/>
                             <constraint firstItem="29c-cc-nKs" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.8" id="f0b-ox-vbu"/>
-                            <constraint firstItem="OqT-Om-h6i" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.6" id="i3p-jU-yYq"/>
-                            <constraint firstItem="1fY-tH-g42" firstAttribute="height" secondItem="j2e-9L-NRg" secondAttribute="height" multiplier="0.1" id="k2g-N7-dWa"/>
+                            <constraint firstItem="cOy-EE-jxO" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.05" id="jtB-sL-raB"/>
+                            <constraint firstItem="Inf-ht-6iC" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="1.1" id="kCg-oM-WDp"/>
+                            <constraint firstItem="cyc-j4-JQa" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.05" id="kJO-pR-aIa"/>
                             <constraint firstItem="WSj-xp-b0N" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.3" id="oYX-J7-iDP"/>
-                            <constraint firstItem="OqT-Om-h6i" firstAttribute="leading" secondItem="cOy-EE-jxO" secondAttribute="trailing" constant="11.5" id="r4R-zf-t4B"/>
+                            <constraint firstItem="MOo-pd-aX8" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.1" id="qad-PO-7ud"/>
+                            <constraint firstItem="cyc-j4-JQa" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.1" id="rbR-Em-hng"/>
                             <constraint firstItem="1fY-tH-g42" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="1.5" id="s5B-f4-Vi4"/>
                             <constraint firstItem="cRP-yZ-gee" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.6" id="ssq-6d-yLn"/>
                             <constraint firstItem="1fY-tH-g42" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="0.9" id="sxh-vI-ce5"/>
+                            <constraint firstItem="OqT-Om-h6i" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.6" id="teT-oX-FQA"/>
+                            <constraint firstItem="Inf-ht-6iC" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.6" id="uDD-8o-Iag"/>
+                            <constraint firstItem="OqT-Om-h6i" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.05" id="vwd-se-KBm"/>
+                            <constraint firstItem="MOo-pd-aX8" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="1.4" id="w8I-hD-YGE"/>
                             <constraint firstItem="29c-cc-nKs" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="0.5" id="x8s-Qa-u4u"/>
-                            <constraint firstItem="cOy-EE-jxO" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.3" id="xu2-6a-9Pf"/>
+                            <constraint firstItem="cOy-EE-jxO" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.4" id="xu2-6a-9Pf"/>
+                            <constraint firstItem="MOo-pd-aX8" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.75" id="yWt-lQ-eYg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="開始揪團" id="FfO-Vc-Dmc">
@@ -1563,7 +1572,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JpF-0K-m0v" id="5ZV-QH-naK" userLabel="contView">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IKj-Ly-Qr9">
@@ -1712,7 +1721,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GvY-ya-gHF" id="eBV-8e-Uqx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zks-kQ-uH8">
@@ -1807,7 +1816,7 @@
         <image name="list24.png" width="24" height="24"/>
         <image name="location_32px.png" width="32" height="32"/>
         <image name="map24.png" width="19" height="23"/>
-        <image name="map48.png" width="48" height="48"/>
+        <image name="map96.png" width="100" height="96"/>
         <image name="open24.png" width="24" height="24"/>
         <image name="profile24.png" width="24" height="24"/>
         <image name="profile48.png" width="48" height="48"/>
