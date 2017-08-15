@@ -424,7 +424,15 @@ class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, U
         self.present(alertController, animated: true, completion: nil)
     }
     
-    
+    func hideKeyborad(tapG: UITapGestureRecognizer) {
+        
+        self.view.endEditing(true)
+        ////加入 點擊外面整個view回到原來位置
+        UIView.animate(withDuration: 0.4, animations: {
+            self.view.frame.origin.y = 0
+        })
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -443,6 +451,12 @@ class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, U
         print(self.subject)
         print(app.mid)
         
+        let tapBack = UITapGestureRecognizer(target: self, action: #selector(hideKeyborad(tapG:)))
+        
+        
+        tapBack.cancelsTouchesInView = false
+        
+        self.view.addGestureRecognizer(tapBack)
         // Do any additional setup after loading the view.
     }
 

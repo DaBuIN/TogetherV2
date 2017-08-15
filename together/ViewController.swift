@@ -178,6 +178,17 @@ class ViewController: UIViewController {
     }
     
    
+    //隱藏鍵盤手勢(點擊其他地方)
+    func hideKeyborad(tapG: UITapGestureRecognizer) {
+        
+        self.view.endEditing(true)
+        ////加入 點擊外面整個view回到原來位置
+        UIView.animate(withDuration: 0.4, animations: {
+            self.view.frame.origin.y = 0
+        })
+        
+    }
+    
     
     
     override func viewDidLoad() {
@@ -191,6 +202,12 @@ class ViewController: UIViewController {
         //isLogin = true
         //addMemberOrLogin()
         // Do any additional setup after loading the view, typically from a nib.
+        let tapBack = UITapGestureRecognizer(target: self, action: #selector(hideKeyborad(tapG:)))
+        
+        
+        tapBack.cancelsTouchesInView = false
+        
+        self.view.addGestureRecognizer(tapBack)
     }
 
     

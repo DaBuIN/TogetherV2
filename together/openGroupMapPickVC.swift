@@ -159,7 +159,7 @@ class openGroupMapPickVC: UIViewController, MKMapViewDelegate, CLLocationManager
             lmgr?.desiredAccuracy = kCLLocationAccuracyBest
             lmgr?.requestWhenInUseAuthorization()
             lmgr?.startUpdatingLocation()
-            lmgr?.distanceFilter = CLLocationDistance(10)
+            lmgr?.distanceFilter = CLLocationDistance(100)
             
         }
         
