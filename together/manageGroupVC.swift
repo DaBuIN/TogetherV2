@@ -1,4 +1,4 @@
-//
+
 //  manageGroupVC.swift
 //  together
 //
@@ -14,7 +14,7 @@ class manageGroupVC: UIViewController{
     
     @IBOutlet weak var segmentOutlet: UISegmentedControl!
     
-    @IBOutlet weak var containerManageGroup: UIView!
+//    @IBOutlet weak var containerManageGroup: UIView!
     @IBOutlet weak var containerApplyGroup: UIView!
 
     @IBOutlet weak var containerMyAllOpenGroup: UIView!
@@ -69,7 +69,7 @@ class manageGroupVC: UIViewController{
     
     
     func apperaPage1(){
-      containerManageGroup.isHidden = true
+//      containerManageGroup.isHidden = true
         containerMyAllOpenGroup.isHidden = false
         containerApplyGroup.isHidden = true
     }

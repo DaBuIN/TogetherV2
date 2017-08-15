@@ -66,17 +66,20 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         }
         
         
-        
+        /////主題
         cell.labelCell.text = mydataGroup[indexPath.row]
+        ///號碼
         cell.labelNumber.text = mydataTid[indexPath.row]
+        ////詳細資料
         cell.labelDetail.text = mydataDetail[indexPath.row]
+        ////主題圖片
         cell.imgSubjectPic.downloadedFrom(link: "\(mydataSubjectPic[indexPath.row])")
         
         /////cell 樣式  有向右指標
         cell.accessoryType = .disclosureIndicator
         //            tbView.separatorColor = nil
         cell.selectionStyle = UITableViewCellSelectionStyle.none
-
+        
         
         return cell
         
@@ -114,11 +117,21 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
         show(vc!, sender: self)
         
         
+        
+        /////主題
         cell.labelCell.text = mydataGroup[indexPath.row]
+        ///號碼
         cell.labelNumber.text = mydataTid[indexPath.row]
+        ////詳細資料
         cell.labelDetail.text = mydataDetail[indexPath.row]
+        ////主題圖片
+        cell.imgSubjectPic.downloadedFrom(link: "\(mydataSubjectPic[indexPath.row])")
+        
         ///Style
         cell.selectionStyle = UITableViewCellSelectionStyle.none
+       
+        cell.accessoryType = .disclosureIndicator
+
 
     }
     
@@ -265,11 +278,11 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
     
     
     func handleRefresh(){
-        
+        loadDB()
         tbView.refreshControl?.endRefreshing()
         
         
-        loadDB()
+        
         tbView.reloadData()
     }
     
@@ -295,6 +308,9 @@ class manageApplyViewVC: UIViewController,UITableViewDelegate,UITableViewDataSou
 
         loadDB()
         
+        //tb沒有分割線
+//        self.tbView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+
         tbView.refreshControl = UIRefreshControl()
         tbView.refreshControl?.addTarget(self, action: #selector(handleRefresh), for: .valueChanged)
         
