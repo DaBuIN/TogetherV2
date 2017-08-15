@@ -18,7 +18,14 @@ class tabBarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //(79,157,157) (255, 117, 117) (41, 148, 255)
+        self.tabBar.barTintColor = UIColor(red: 79.0/255.0, green: 157.0/255.0, blue: 157/255.0, alpha: 0.7)
+        //        (red: 41.0/255.0, green: 148.0/255.0, blue: 117/255.0, alpha: 1.0)
+        
+        //        (red: 255.0/255.0, green: 117.0/255.0, blue: 117/255.0, alpha: 1.0)
+        //        (red: 79.0/255.0, green: 157.0/255.0, blue: 157/255.0, alpha: 0.7)
+        self.tabBar.unselectedItemTintColor = UIColor.black
+        self.tabBar.tintColor = UIColor.blue
     }
 
     override func didReceiveMemoryWarning() {
