@@ -31,31 +31,56 @@ class resultListVC: UIViewController, UITableViewDelegate, UITableViewDataSource
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultcell") as! resultListTbCell
+        ///有指標
+        cell.accessoryType = .disclosureIndicator
+        ////選擇後沒有樣式
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
+ 
+        var formatter: DateFormatter! = nil
         
+        formatter = DateFormatter()   //date picker 初始化 日期格式
+        //            formatter.dateFormat = "yyyy年MM月dd日HH時mm分"
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        //////取得現在時間字串
+        let now = Date()
+        let nowDateString = formatter.string(from: now)
         
+        let startDateAsString = self.groupDict?[indexPath.row]["starttime"]
+        let endDateAsString = self.groupDict?[indexPath.row]["endtime"]
         
-        //            cell.groupTitle.text = self.groupDict?[indexPath.row]["subject"]
-        
-//        let picStr = groupDict?[indexPath.row]["subjectpic"]
-//        cell.groupImg.downloadedFrom(link: "\(picStr)")
+        // status
+        if endDateAsString! > nowDateString && startDateAsString! > nowDateString  {
+            cell.groupStatus.text = "揪團熱烈邀請中"
+            cell.groupStatus.textColor = UIColor.blue
+            print("結束時間大於現在且未開團")
+        }else if endDateAsString! > nowDateString && startDateAsString! < nowDateString {
+            cell.groupStatus.text = "揪團舉行中"
+            cell.groupStatus.textColor = UIColor.blue
+            print("結束時間大於現在且已開團")
+        }else if  endDateAsString! < nowDateString  {
+            cell.groupStatus.text = "揪團結束"
+            cell.groupStatus.textColor = UIColor.black
+            print("結束時間小於現在")
+        }else if endDateAsString == nowDateString    {
+            print("結束時間等於現在")
+            cell.groupStatus.text = "非常幸運揪團正在舉行"
+            cell.groupStatus.textColor = UIColor.black
+        }
+
         
         ///先顯示 tid
-        cell.groupTitle.text = self.groupDict?[indexPath.row]["tid"]
-        cell.groupContent.text = self.groupDict?[indexPath.row]["detail"]
-        //        cell.groupContent.text = self.groupDict?[indexPath.row]["opengroupmid"]
-        cell.groupStatus.text = "Hot"
-        cell.groupClass.text = self.groupDict?[indexPath.row]["class"]
-//        cell.groupImg.image = UIImage(named:"question.jpg")
+//        cell.groupTitle.text = self.groupDict?[indexPath.row]["tid"]
+        cell.groupTitle.text = self.groupDict?[indexPath.row]["subject"]
 
-////        print("\(self.groupDict?[indexPath.row]["subjectpic"]!)")
-//         cell.groupImg.downloadedFrom(link: "\( self.groupDict?[indexPath.row]["subjectpic"]! )"  )
-//
+        cell.groupContent.text = self.groupDict?[indexPath.row]["detail"]
+//        cell.groupStatus.text = "Hot"
+        cell.groupClass.text = self.groupDict?[indexPath.row]["class"]
+
         if let picStr = groupDict?[indexPath.row]["subjectpic"] {
             cell.groupImg.downloadedFrom(link: "\(picStr)")
-//            cell.groupImg.image = UIImage(named:"question.jpg")
             
         } else {
-            cell.groupContent.text = (groupDict?[indexPath.row]["subjectpic"])
+            cell.groupImg.image = UIImage(named:"question.jpg")
         }
         
         
