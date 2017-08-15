@@ -32,6 +32,25 @@ class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet var SwipeLeft: UISwipeGestureRecognizer!
     @IBOutlet var Tap: UITapGestureRecognizer!
     
+    
+    @IBAction func logout(_ sender: Any) {
+        app.account = nil
+        app.mid = nil
+        app.tid = nil
+        app.id = nil
+        app.myAllGroupSelectedTid = nil
+        app.whojoinGroupSelectApplyUserMid = nil
+        app.whojoinGroupSelectMaid = nil
+        
+        
+        
+        let vc = storyboard?.instantiateViewController(withIdentifier: "MainView")
+        present(vc!, animated: true, completion: nil)
+
+    }
+    
+    
+    
     @IBAction func SaveinfoBtn(_ sender: Any) {
         
         let nickname = nameText.text!
