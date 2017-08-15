@@ -19,6 +19,7 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var mastatus:String?
     let app = UIApplication.shared.delegate as! AppDelegate
     
+    @IBOutlet weak var hostName: UILabel!
     @IBOutlet weak var subjectpicView: UIImageView!
     @IBOutlet weak var subjectDescrption: UITextView!
     @IBOutlet weak var subject: UILabel!
@@ -95,6 +96,7 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
     var Gsubject:String?
     var Gtid:String?
     var Gmid:String?
+    
     //var nickname:String?
     var groupReviews: [GroupReviewItem] = [GroupReviewItem]()
     
@@ -182,6 +184,90 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
 
     }
     
+    func loadDB(){
+        //Myfilemid = app.mid
+        
+        if let mid = openGroupmid {
+            
+            //c9資料庫 post
+            let url = URL(string: "https://together-seventsai.c9users.io/loadDatafromtable.php")
+            let session = URLSession(configuration: .default)
+            print("123465")
+            
+            var req = URLRequest(url: url!)
+            
+            req.httpMethod = "POST"
+            req.httpBody = "mid=\(mid)".data(using: .utf8)
+            
+            let task = session.dataTask(with: req, completionHandler: {(data, response,error) in
+                let source = String(data: data!, encoding: .utf8)
+                
+                //                print(source!)
+                
+                DispatchQueue.main.async {
+                    
+                    
+                    do{
+                        
+                        
+                        let jsonobj = try JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+                        
+                        for a in  jsonobj as! [[String:String]] {
+                            var nickname = a["nickname"]!
+                           // var description = a["description"]
+                            //var personalpic = a["personalpic"]!
+                            //self.nameText.text = nickname
+                           // self.testlabel.text = description
+                            self.hostName.text = nickname
+//                            do{
+//                                let url = URL(string:"\(personalpic)")
+//                                
+//                                //  print("222\(url)")
+//                                
+//                                if url != nil {
+//                                    let data = try Data(contentsOf: url!)
+//                                    if (UIImage(data: data) != nil) {
+//                                        print("OK")
+//                                        self.takepictureBtn.setImage(UIImage(data: data)!, for: .normal)
+//                                    }else {
+//                                        self.takepictureBtn.setImage(UIImage(named: "question.jpg")!, for: .normal)
+//                                        print("xx")
+//                                    }
+//                                    
+//                                }
+//                                else {
+//                                    print("ok")
+//                                    self.takepictureBtn.setImage(UIImage(named: "question.jpg")!, for: .normal)
+//                                }
+//                            }catch{
+//                                print(error)
+//                                self.takepictureBtn.setImage(UIImage(named: "question.jpg")!, for: .normal)
+//                            }
+                            
+                            
+                            //print("987654")
+                        }
+                        
+                    }catch {
+                        print("thisis \(error)")
+                    }
+                }
+                
+            })
+            
+            task.resume()
+            
+        }else {
+            
+            print("no account")
+            
+            
+        }
+        
+    }
+    
+    
+    
     
     
     @IBAction func applyGroup(_ sender: Any) {
@@ -198,9 +284,10 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GroupReviewTableViewCell", for: indexPath) as! GroupReviewTableViewCell
         
-        //var temppic = self.groupReviews[indexPath.row].userId
+        Gmid = self.groupReviews.reversed()[indexPath.row].userId
         
-        Gmid = app.mid
+        
+        //Gmid = app.mid
         
         //print("why\(Gmid)")
         let url = URL(string: "https://together-seventsai.c9users.io/loadDatafromtable.php")
@@ -293,12 +380,12 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
         cell.reViewTextView?.text = self.groupReviews.reversed()[indexPath.row].groupReview
         //cell.loginUser.text = self.groupReviews.reversed()[indexPath.row].userEmail
         cell.Timelabel.text = self.groupReviews.reversed()[indexPath.row].createDate
-        let mmid = app.mid
-        if mmid == self.groupReviews.reversed()[indexPath.row].userId {
+        //let mmid = openGroupmid
+        //if mmid == self.groupReviews.reversed()[indexPath.row].userId {
             //cell.backgroundColor = UIColor.blue
            // cell.reViewTextView.backgroundColor = UIColor.blue
-            cell.loginUser.textColor = UIColor.darkGray
-        }
+          //  cell.loginUser.textColor = UIColor.darkGray
+        //}
         
         let layer = cell.ProfileImg.layer
         layer.cornerRadius = 20.0
@@ -402,7 +489,7 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         let alertController = UIAlertController(title: "請輸入評論", message: "不能空白喔！", preferredStyle: .alert)
         let okaction = UIAlertAction(title: "確認", style: .default, handler: {(action) in
-            self.dismiss(animated: true, completion: nil)
+            //self.dismiss(animated: true, completion: nil)
             
         })
         
@@ -431,7 +518,7 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
         openGroupmid = app.openGroupMid
         print("detail頁面目前創團者是\(openGroupmid)")
 //        btnApplyOulet.isEnabled = false
-        
+        hostName.text = openGroupmid
         //如果是同一個人   不顯示申請加入按鈕
         if mid == openGroupmid  {
             self.navigationItem.rightBarButtonItem = nil
@@ -439,6 +526,8 @@ class Groupdetail: UIViewController, UITableViewDataSource, UITableViewDelegate 
         
         ////////////********************
         loadmygroup()
+        
+        loadDB()
         
         let groupViewLayer = subjectpicView.layer
         groupViewLayer.cornerRadius = 20.0
