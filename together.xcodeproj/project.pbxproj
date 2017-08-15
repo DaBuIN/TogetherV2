@@ -49,6 +49,11 @@
 		14D01B251F42E39E00A6F960 /* map128.png in Resources */ = {isa = PBXBuildFile; fileRef = 14D01B231F42E39E00A6F960 /* map128.png */; };
 		14F439541F1CA27D0060D839 /* openGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F439531F1CA27D0060D839 /* openGroupVC.swift */; };
 		1745F92F455B811D0C2306A6 /* Pods_together.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD7C2700CBEA5CAD4EECE9FE /* Pods_together.framework */; };
+		4A0351F51F42ED1400401215 /* 020-pencil.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A0351F41F42ED1400401215 /* 020-pencil.png */; };
+		4A0351F71F42EDCF00401215 /* messageboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A0351F61F42EDCF00401215 /* messageboard.png */; };
+		4A0351F91F42F0D400401215 /* introduce.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A0351F81F42F0D400401215 /* introduce.png */; };
+		4A0351FB1F42F0F200401215 /* name.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A0351FA1F42F0F200401215 /* name.png */; };
+		4A0351FD1F42F1C500401215 /* managegroup.png in Resources */ = {isa = PBXBuildFile; fileRef = 4A0351FC1F42F1C500401215 /* managegroup.png */; };
 		4ACA6E481F1EF5C6002B1CA5 /* MyfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACA6E471F1EF5C6002B1CA5 /* MyfileViewController.swift */; };
 		84BEA4AF1F40EA8200B144F3 /* zoom_in_32px.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BEA4AD1F40EA8200B144F3 /* zoom_in_32px.png */; };
 		84BEA4B01F40EA8200B144F3 /* zoom_out_32px.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BEA4AE1F40EA8200B144F3 /* zoom_out_32px.png */; };
@@ -118,6 +123,11 @@
 		14F439531F1CA27D0060D839 /* openGroupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = openGroupVC.swift; sourceTree = "<group>"; };
 		27CA076D43421851F4BB5085 /* Pods-together.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-together.release.xcconfig"; path = "Pods/Target Support Files/Pods-together/Pods-together.release.xcconfig"; sourceTree = "<group>"; };
 		42866690544DDE4F6930258B /* Pods-together.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-together.debug.xcconfig"; path = "Pods/Target Support Files/Pods-together/Pods-together.debug.xcconfig"; sourceTree = "<group>"; };
+		4A0351F41F42ED1400401215 /* 020-pencil.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "020-pencil.png"; sourceTree = "<group>"; };
+		4A0351F61F42EDCF00401215 /* messageboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageboard.png; sourceTree = "<group>"; };
+		4A0351F81F42F0D400401215 /* introduce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = introduce.png; sourceTree = "<group>"; };
+		4A0351FA1F42F0F200401215 /* name.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = name.png; sourceTree = "<group>"; };
+		4A0351FC1F42F1C500401215 /* managegroup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = managegroup.png; sourceTree = "<group>"; };
 		4ACA6E471F1EF5C6002B1CA5 /* MyfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyfileViewController.swift; sourceTree = "<group>"; };
 		84BEA4AD1F40EA8200B144F3 /* zoom_in_32px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoom_in_32px.png; path = imgs/zoom_in_32px.png; sourceTree = "<group>"; };
 		84BEA4AE1F40EA8200B144F3 /* zoom_out_32px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = zoom_out_32px.png; path = imgs/zoom_out_32px.png; sourceTree = "<group>"; };
@@ -175,8 +185,11 @@
 				14D01B0F1F42D0EF00A6F960 /* start32.png */,
 				14D01B101F42D0EF00A6F960 /* 005-social.png */,
 				14D01B111F42D0EF00A6F960 /* 006-square.png */,
+				4A0351F61F42EDCF00401215 /* messageboard.png */,
 				14D01B121F42D0EF00A6F960 /* 007-login-sketch.png */,
 				14D01B131F42D0EF00A6F960 /* loginLabel32.png */,
+				4A0351F41F42ED1400401215 /* 020-pencil.png */,
+				4A0351FC1F42F1C500401215 /* managegroup.png */,
 				14D01B141F42D0EF00A6F960 /* detail32.png */,
 				14D01B0C1F42D09200A6F960 /* class32.png */,
 				14D01B0A1F42D02900A6F960 /* class48.png */,
@@ -186,11 +199,13 @@
 				84BEA4AD1F40EA8200B144F3 /* zoom_in_32px.png */,
 				84BEA4AE1F40EA8200B144F3 /* zoom_out_32px.png */,
 				14B256641F3AD0C000084325 /* map24.png */,
+				4A0351FA1F42F0F200401215 /* name.png */,
 				1428869E1F381C8F0047FA28 /* profile24.png */,
 				1428869F1F381C8F0047FA28 /* open24.png */,
 				1428869C1F381C110047FA28 /* list24.png */,
 				142886961F3811BE0047FA28 /* home16.png */,
 				142886941F3811B80047FA28 /* home24.png */,
+				4A0351F81F42F0D400401215 /* introduce.png */,
 				F74756561F2C5D0200AF3631 /* question.jpg */,
 				14CF3BA51F3CF74C0046F932 /* profile48.png */,
 			);
@@ -339,10 +354,13 @@
 				F73D8F1D1F2A404D006951F7 /* GoogleService-Info.plist in Resources */,
 				142886A11F381C8F0047FA28 /* open24.png in Resources */,
 				14D01B1F1F42D17900A6F960 /* map48.png in Resources */,
+				4A0351FB1F42F0F200401215 /* name.png in Resources */,
 				14D01B151F42D0EF00A6F960 /* end32.png in Resources */,
 				14D01B161F42D0EF00A6F960 /* start32.png in Resources */,
 				14D01B241F42E39E00A6F960 /* map96.png in Resources */,
+				4A0351F91F42F0D400401215 /* introduce.png in Resources */,
 				84BEA4B21F40ECB600B144F3 /* location_32px.png in Resources */,
+				4A0351FD1F42F1C500401215 /* managegroup.png in Resources */,
 				14D01B191F42D0EF00A6F960 /* 007-login-sketch.png in Resources */,
 				1428869D1F381C110047FA28 /* list24.png in Resources */,
 				14D01B1D1F42D16E00A6F960 /* map32.png in Resources */,
@@ -357,8 +375,10 @@
 				14CF3BA61F3CF74C0046F932 /* profile48.png in Resources */,
 				14D01B251F42E39E00A6F960 /* map128.png in Resources */,
 				142886971F3811BE0047FA28 /* home16.png in Resources */,
+				4A0351F51F42ED1400401215 /* 020-pencil.png in Resources */,
 				14D01B211F42D28900A6F960 /* addimg.png in Resources */,
 				84BEA4AF1F40EA8200B144F3 /* zoom_in_32px.png in Resources */,
+				4A0351F71F42EDCF00401215 /* messageboard.png in Resources */,
 				14D01B171F42D0EF00A6F960 /* 005-social.png in Resources */,
 				14AAD7431F1C694F00BC6E9E /* Main.storyboard in Resources */,
 			);
