@@ -23,6 +23,7 @@ class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, U
     var Myfilemid:String?
     @IBOutlet weak var takepictureBtn: UIButton!
     //@IBOutlet weak var imageView: UIImageView!
+    
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var groupname: UILabel!
     @IBOutlet weak var mygroupControl: UIPageControl!
@@ -84,6 +85,57 @@ class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, U
         alertSaved()
     }
     
+    
+    @IBAction func takepicBTN(_ sender: Any) {
+        
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cameraAction = UIAlertAction(title: "使用相機", style: .default, handler: {(action) in
+            openCamera()
+        })
+        let libraryAction = UIAlertAction(title: "使用相簿", style: .default, handler: {(action) in
+            openLibrary()
+            
+            
+        })
+        let cancelAction = UIAlertAction(title: "取消", style: .destructive, handler: {(action) in
+            //           self.dismiss(animated: true, completion: nil)
+        })
+        
+        alertController.addAction(cameraAction)
+        alertController.addAction(libraryAction)
+        alertController.addAction(cancelAction)
+        
+        if let popoverController = alertController.popoverPresentationController{
+            popoverController.sourceView = view as? UIView
+            popoverController.sourceRect = CGRect(x : self.view.bounds.midX, y : self.view.bounds.midY, width: 0, height: 0)
+        }
+        self.present(alertController, animated: true, completion: nil)
+        
+        func openCamera(){
+            if UIImagePickerController.isSourceTypeAvailable(.camera){
+                
+                let imgPickerTakeVC = UIImagePickerController()
+                imgPickerTakeVC.sourceType = .camera
+                imgPickerTakeVC.delegate = self
+                
+                show(imgPickerTakeVC, sender: self)
+            }
+        }
+        
+        func openLibrary(){
+            let imgPickGetVC = UIImagePickerController()
+            imgPickGetVC.sourceType = .photoLibrary
+            imgPickGetVC.delegate = self
+            
+            if let popoverController = alertController.popoverPresentationController{
+                popoverController.sourceView = view as? UIView
+                popoverController.sourceRect = CGRect(x : self.view.bounds.midX, y : self.view.bounds.midY, width : 0 ,height : 0)
+            }
+            present(imgPickGetVC, animated: true, completion: nil)
+        }
+        
+        
+    }
     //圖片使用照相機拍攝後的圖片或者本機端圖片
     @IBAction func takepic(_ sender: Any) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
