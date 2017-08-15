@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9gn-64-m8q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Together_cover_phone.png" translatesAutoresizingMaskIntoConstraints="NO" id="9gn-64-m8q">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.30980392156862746" green="0.61568627450980395" blue="0.61568627450980395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
@@ -143,14 +143,6 @@
                                     <action selector="changeShowMode:" destination="RCp-yW-nzL" eventType="valueChanged" id="Zco-xk-eSY"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wau-8B-DUS">
-                                <rect key="frame" x="141" y="580" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="設定搜尋條件"/>
-                                <connections>
-                                    <action selector="toEditSearch:" destination="RCp-yW-nzL" eventType="touchUpInside" id="Xje-gX-4Jf"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -170,7 +162,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="圖揪及清單揪" id="WlK-dV-frn">
-                        <barButtonItem key="rightBarButtonItem" title="條件搜尋" id="qhV-RN-hIe"/>
+                        <barButtonItem key="rightBarButtonItem" title="條件搜尋" id="qhV-RN-hIe">
+                            <connections>
+                                <action selector="toEditSearch:" destination="RCp-yW-nzL" id="ONN-I1-4hV"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contViewList" destination="eYy-5f-qU9" id="F5z-zv-E2G"/>
@@ -1222,7 +1218,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="whojoinmyopengroupcell" id="Mvo-Mf-Lwo" customClass="whojoinmyopengroupTBVCell" customModule="together" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="301" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="300" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Mvo-Mf-Lwo" id="VY3-fH-H0j">
                                             <rect key="frame" x="0.0" y="0.0" width="300" height="99.5"/>
@@ -1687,7 +1683,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JpF-0K-m0v" id="5ZV-QH-naK" userLabel="contView">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IKj-Ly-Qr9">
@@ -1833,10 +1829,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="manageapplycell" id="GvY-ya-gHF" customClass="applyGroupTBVCell" customModule="together" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="376" height="100"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GvY-ya-gHF" id="eBV-8e-Uqx">
-                                            <rect key="frame" x="0.0" y="0.0" width="376" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zks-kQ-uH8">
@@ -1924,6 +1920,7 @@
     </scenes>
     <resources>
         <image name="020-pencil.png" width="32" height="32"/>
+        <image name="Together_cover_phone.png" width="750" height="1334"/>
         <image name="addimg.png" width="32" height="32"/>
         <image name="cancel_48px.png" width="48" height="48"/>
         <image name="class32.png" width="32" height="32"/>
