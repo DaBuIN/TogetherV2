@@ -27,11 +27,14 @@ class loginViewController: UIViewController {
     @IBOutlet weak var passwordText: UITextField!
     
     
+    @IBOutlet weak var loginBTN: UIButton!
     
     @IBAction func loginBtn(_ sender: Any) {
         if emailText.text == "" || passwordText.text == "" {
             
             passwordText.isSecureTextEntry = true
+            
+            
             
             //let account = emailText.text!
             //let passwd = passwordText.text!
@@ -131,7 +134,15 @@ class loginViewController: UIViewController {
         //  self.performSegue(withIdentifier: "testvc", sender: nil)
         // }
         
-        
+        UIView.animate(withDuration: 0.6,
+                       animations: {
+                        self.loginBTN.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        },
+                       completion: { _ in
+                        UIView.animate(withDuration: 0.6) {
+                            self.loginBTN.transform = CGAffineTransform.identity
+                        }
+        })
         
     
     
