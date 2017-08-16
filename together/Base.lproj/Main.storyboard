@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -92,16 +92,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eYy-5f-qU9" userLabel="contViewList">
-                                <rect key="frame" x="0.0" y="103.5" width="375" height="500"/>
-                                <connections>
-                                    <segue destination="31z-sg-4aJ" kind="embed" identifier="segResultList" id="3AW-vw-ZNI"/>
-                                </connections>
-                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMw-Ns-uN8" userLabel="contViewMap">
                                 <rect key="frame" x="0.0" y="103.5" width="375" height="500"/>
                                 <connections>
-                                    <segue destination="ZDg-Xb-rX1" kind="embed" identifier="segResultMap" id="1nQ-Vb-SRw"/>
+                                    <segue destination="ZDg-Xb-rX1" kind="embed" id="o4t-ED-he7"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gni-hr-I99">
@@ -114,21 +108,27 @@
                                     <action selector="changeShowMode:" destination="RCp-yW-nzL" eventType="valueChanged" id="Zco-xk-eSY"/>
                                 </connections>
                             </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NE-nG-YiT">
+                                <rect key="frame" x="0.0" y="103.5" width="375" height="500"/>
+                                <connections>
+                                    <segue destination="31z-sg-4aJ" kind="embed" id="BbY-Mf-a0u"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5NE-nG-YiT" firstAttribute="centerX" secondItem="h5E-uC-Ez5" secondAttribute="centerX" id="0K3-Kj-9A3"/>
                             <constraint firstItem="cMw-Ns-uN8" firstAttribute="width" secondItem="h5E-uC-Ez5" secondAttribute="width" id="6aP-t2-j3X"/>
-                            <constraint firstItem="eYy-5f-qU9" firstAttribute="centerX" secondItem="h5E-uC-Ez5" secondAttribute="centerX" id="9RN-p0-r2L"/>
-                            <constraint firstItem="eYy-5f-qU9" firstAttribute="centerY" secondItem="h5E-uC-Ez5" secondAttribute="centerY" multiplier="1.06" id="BY2-8e-Dof"/>
                             <constraint firstItem="cMw-Ns-uN8" firstAttribute="height" secondItem="h5E-uC-Ez5" secondAttribute="height" multiplier="0.75" id="ExY-ST-qcv"/>
                             <constraint firstItem="Gni-hr-I99" firstAttribute="centerY" secondItem="h5E-uC-Ez5" secondAttribute="centerY" multiplier="0.25" id="Ggb-sx-5VB"/>
+                            <constraint firstItem="5NE-nG-YiT" firstAttribute="height" secondItem="h5E-uC-Ez5" secondAttribute="height" multiplier="0.75" id="JCs-XV-JfB"/>
                             <constraint firstItem="cMw-Ns-uN8" firstAttribute="centerX" secondItem="h5E-uC-Ez5" secondAttribute="centerX" id="O8Y-ou-ewh"/>
                             <constraint firstItem="Gni-hr-I99" firstAttribute="width" secondItem="h5E-uC-Ez5" secondAttribute="width" id="Pap-Yk-E1V"/>
-                            <constraint firstItem="eYy-5f-qU9" firstAttribute="height" secondItem="h5E-uC-Ez5" secondAttribute="height" multiplier="0.75" id="V5g-Q0-IO5"/>
                             <constraint firstItem="Gni-hr-I99" firstAttribute="height" secondItem="h5E-uC-Ez5" secondAttribute="height" multiplier="0.06" id="ZPr-h2-ntD"/>
+                            <constraint firstItem="5NE-nG-YiT" firstAttribute="width" secondItem="h5E-uC-Ez5" secondAttribute="width" id="c86-Ym-Kci"/>
                             <constraint firstItem="Gni-hr-I99" firstAttribute="centerX" secondItem="h5E-uC-Ez5" secondAttribute="centerX" id="h13-yl-g1Y"/>
                             <constraint firstItem="cMw-Ns-uN8" firstAttribute="centerY" secondItem="h5E-uC-Ez5" secondAttribute="centerY" multiplier="1.06" id="l7a-cd-3KG"/>
-                            <constraint firstItem="eYy-5f-qU9" firstAttribute="width" secondItem="h5E-uC-Ez5" secondAttribute="width" id="m97-pm-Lge"/>
+                            <constraint firstItem="5NE-nG-YiT" firstAttribute="centerY" secondItem="h5E-uC-Ez5" secondAttribute="centerY" multiplier="1.06" id="r5K-Om-KKS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="圖揪及清單揪" id="WlK-dV-frn">
@@ -139,8 +139,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="contViewList" destination="eYy-5f-qU9" id="F5z-zv-E2G"/>
-                        <outlet property="contViewMap" destination="cMw-Ns-uN8" id="35W-s7-TLf"/>
+                        <outlet property="contViewList" destination="5NE-nG-YiT" id="gmR-eQ-APG"/>
+                        <outlet property="contViewMap" destination="cMw-Ns-uN8" id="szT-g9-Ybg"/>
                         <outlet property="segmentedControl" destination="Gni-hr-I99" id="qFx-3D-1zt"/>
                     </connections>
                 </viewController>
@@ -912,7 +912,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="揪團介紹" translatesAutoresizingMaskIntoConstraints="NO" id="MOo-pd-aX8">
-                                <rect key="frame" x="178.5" y="550" width="168.5" height="67"/>
+                                <rect key="frame" x="150" y="543.5" width="187.5" height="67"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -926,15 +926,15 @@
                                 <state key="normal" image="class32.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOy-EE-jxO" userLabel="imgStart">
-                                <rect key="frame" x="37.5" y="450.5" width="37.5" height="33"/>
+                                <rect key="frame" x="19" y="450.5" width="37.5" height="33"/>
                                 <state key="normal" image="start32.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WC-Bg-sr1" userLabel="imgEnd">
-                                <rect key="frame" x="75" y="500.5" width="37.5" height="33"/>
+                                <rect key="frame" x="65.5" y="500.5" width="37.5" height="33"/>
                                 <state key="normal" image="end32.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyc-j4-JQa" userLabel="imgDetail">
-                                <rect key="frame" x="122" y="550.5" width="37.5" height="33"/>
+                                <rect key="frame" x="112.5" y="550.5" width="37.5" height="33"/>
                                 <state key="normal" image="detail32.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSj-xp-b0N" userLabel="imgTakePic">
@@ -957,18 +957,18 @@
                             <constraint firstItem="pKw-yi-OcM" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="1.2" id="J6m-hj-tHF"/>
                             <constraint firstItem="cyc-j4-JQa" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.7" id="L2L-6m-ofp"/>
                             <constraint firstItem="OqT-Om-h6i" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.4" id="LaO-BX-Mzl"/>
-                            <constraint firstItem="cyc-j4-JQa" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.75" id="MYq-hG-JlN"/>
+                            <constraint firstItem="cyc-j4-JQa" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.7" id="MYq-hG-JlN"/>
                             <constraint firstItem="WSj-xp-b0N" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.2" id="OC9-JD-Vlk"/>
                             <constraint firstItem="0WC-Bg-sr1" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.55" id="Qml-op-2ek"/>
-                            <constraint firstItem="0WC-Bg-sr1" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.5" id="Qzj-iA-sf8"/>
+                            <constraint firstItem="0WC-Bg-sr1" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.45" id="Qzj-iA-sf8"/>
                             <constraint firstItem="29c-cc-nKs" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.3" id="Tfr-gu-FnE"/>
                             <constraint firstItem="Inf-ht-6iC" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.05" id="Y3D-kJ-i5Z"/>
                             <constraint firstItem="j2e-9L-NRg" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.15" id="YVH-lr-ZSA"/>
-                            <constraint firstItem="MOo-pd-aX8" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.45" id="Yuo-em-TB1"/>
+                            <constraint firstItem="MOo-pd-aX8" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.5" id="Yuo-em-TB1"/>
                             <constraint firstItem="cRP-yZ-gee" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.1" id="ZrI-VS-Xkl"/>
                             <constraint firstItem="cRP-yZ-gee" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.6" id="aDN-MA-bLY"/>
                             <constraint firstItem="pKw-yi-OcM" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="0.9" id="bex-Tn-ew7"/>
-                            <constraint firstItem="cOy-EE-jxO" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.3" id="clt-51-fqg"/>
+                            <constraint firstItem="cOy-EE-jxO" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="0.2" id="clt-51-fqg"/>
                             <constraint firstItem="29c-cc-nKs" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" id="e2k-Db-4qV"/>
                             <constraint firstItem="Inf-ht-6iC" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.55" id="eTT-Ve-GK2"/>
                             <constraint firstItem="29c-cc-nKs" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.8" id="f0b-ox-vbu"/>
@@ -984,10 +984,10 @@
                             <constraint firstItem="OqT-Om-h6i" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.6" id="teT-oX-FQA"/>
                             <constraint firstItem="Inf-ht-6iC" firstAttribute="width" secondItem="ICK-t3-1v8" secondAttribute="width" multiplier="0.6" id="uDD-8o-Iag"/>
                             <constraint firstItem="OqT-Om-h6i" firstAttribute="height" secondItem="ICK-t3-1v8" secondAttribute="height" multiplier="0.05" id="vwd-se-KBm"/>
-                            <constraint firstItem="MOo-pd-aX8" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="1.4" id="w8I-hD-YGE"/>
+                            <constraint firstItem="MOo-pd-aX8" firstAttribute="centerX" secondItem="ICK-t3-1v8" secondAttribute="centerX" multiplier="1.3" id="w8I-hD-YGE"/>
                             <constraint firstItem="29c-cc-nKs" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="0.5" id="x8s-Qa-u4u"/>
                             <constraint firstItem="cOy-EE-jxO" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.4" id="xu2-6a-9Pf"/>
-                            <constraint firstItem="MOo-pd-aX8" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.75" id="yWt-lQ-eYg"/>
+                            <constraint firstItem="MOo-pd-aX8" firstAttribute="centerY" secondItem="ICK-t3-1v8" secondAttribute="centerY" multiplier="1.73" id="yWt-lQ-eYg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="開始揪團" id="FfO-Vc-Dmc">
@@ -1768,7 +1768,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14W-ax-oPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4061.5999999999999" y="-1927.2863568215894"/>
+            <point key="canvasLocation" x="4159" y="-2143"/>
         </scene>
         <!--Result MapVC-->
         <scene sceneID="Goc-CR-GtM">
@@ -1833,7 +1833,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKc-Bh-zDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4061.5999999999999" y="-1349.7751124437782"/>
+            <point key="canvasLocation" x="4567" y="-1454"/>
         </scene>
         <!--Manage Apply ViewVC-->
         <scene sceneID="Qff-OG-OPP">

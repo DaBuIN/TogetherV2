@@ -15,7 +15,12 @@ class resultMapListVC: UIViewController {
     var groupDict:[[String:String]]?
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+
+    
+    
     @IBOutlet weak var contViewList: UIView!
+    
+    
     @IBOutlet weak var contViewMap: UIView!
     @IBAction func toEditSearch(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "searchvc") as! searchGroupVC
