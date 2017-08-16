@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate {
+class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDelegate ,UITextViewDelegate , UITextFieldDelegate {
     
     let app = UIApplication.shared.delegate as! AppDelegate
     var nametext:String?
@@ -486,8 +486,49 @@ class MyfileViewController: UIViewController, UIImagePickerControllerDelegate, U
         
     }
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        //結束編輯 把鍵盤隱藏 view放下
+        UIView.animate(withDuration: 0.4, animations: {
+            self.view.frame.origin.y = 0
+        })
+        return true
+    }
+    
+    
+    func textFieldDidBeginEditing(_ textView:UITextField) {
+        //view彈起
+        UIView.animate(withDuration: 0.4, animations: {
+            self.view.frame.origin.y = -210
+        })
+    }
+    
+    
+    /////////鍵盤出現 畫面上移
+    // 開始編輯時 view上移
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        //view 往上移
+        UIView.animate(withDuration: 0.4, animations: {
+            self.view.frame.origin.y = -210
+        })
+    }
+    // 結束編輯時 view下移
+    func textViewDidEndEditing(_ textView: UITextView) {
+        UIView.animate(withDuration: 0.4, animations: {
+            self.view.frame.origin.y = 0
+        })
+    }
+    
+
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        testlabel.delegate = self
+        nameText.delegate = self
         loadDB()
         //loadmygroup()
         let layer = takepictureBtn.layer

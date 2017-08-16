@@ -713,6 +713,8 @@ class openGroupVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textFieldStartDate.delegate = self
+        textFieldEndDate.delegate = self
         
         //// get memberID
         let app = UIApplication.shared.delegate as! AppDelegate
