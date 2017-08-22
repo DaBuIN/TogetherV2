@@ -329,7 +329,7 @@
 				TargetAttributes = {
 					14AAD7391F1C694F00BC6E9E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 95TF683BY5;
+						DevelopmentTeam = 563PUB29WL;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -611,10 +611,11 @@
 			baseConfigurationReference = 42866690544DDE4F6930258B /* Pods-together.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 95TF683BY5;
+				DEVELOPMENT_TEAM = 563PUB29WL;
 				INFOPLIST_FILE = together/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tw.com.seven.together;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.com.together;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -625,10 +626,11 @@
 			baseConfigurationReference = 27CA076D43421851F4BB5085 /* Pods-together.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 95TF683BY5;
+				DEVELOPMENT_TEAM = 563PUB29WL;
 				INFOPLIST_FILE = together/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = tw.com.seven.together;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.com.together;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
